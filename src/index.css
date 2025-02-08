@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .card-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .card-inner {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x) var(--y), 
+      rgba(255,255,255,0.2) 0%, 
+      rgba(255,255,255,0) 70%);
+    pointer-events: none;
+  }
+
+  :root {
+    /* Base Colors */
+    --color-dark: #3D3D3D;
+    --color-accent: #578E7E;
+    --color-cream: #F5ECD5;
+    --color-offwhite: #FFFAEC;
+    
+    /* Secondary Palette */
+    --secondary-lavender: #b2a3c4;
+    --secondary-purple: #7e679d;
+    --secondary-skyblue: #9ab5e0;
+    --secondary-mint: #66afa4;
+    --secondary-iceblue: #c0e0df;
+  
+    /* Theme Assignments */
+    --color-text: var(--color-dark);
+    --color-background: var(--color-offwhite);
+    --color-primary: var(--color-accent);
+    --color-secondary: var(--secondary-purple);
+  }

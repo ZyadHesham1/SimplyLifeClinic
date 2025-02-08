@@ -1,0 +1,223 @@
+{
+
+  "title": "Simply Life",
+
+  "navbar": {
+    "home": "Home",
+    "test": "Online Tests",
+    "appointment": "Make Appointment",
+    "logo_alt": "Logo",
+    "title": "Simply Life"
+  },
+
+
+  "hero": {
+    "title": "Your Mental Health Matters",
+    "subtitle": "Professional care and support for your wellbeing journey",
+    "list_item_1": "Personalized treatment plans",
+    "list_item_2": "Experienced and compassionate therapists",
+    "list_item_3": "Confidential and secure sessions",
+    "cta_primary": "Book Consultation",
+    "image_alt": "Happy person discussing with professional therapist"
+  },
+  "message_section": {
+    "title": "Our Core Values",
+    "columns": [
+      {
+        "title": "Compassionate Care",
+        "text": "Empathetic support tailored to individual needs"
+      },
+      {
+        "title": "Professional Excellence",
+        "text": "Licensed practitioners with proven expertise"
+      },
+      {
+        "title": "Confidentiality",
+        "text": "Secure and private therapy sessions"
+      },
+      {
+        "title": "Accessibility",
+        "text": "Available services for all backgrounds"
+      },
+      {
+        "title": "Holistic Approach",
+        "text": "Integrated mind-body wellness strategies"
+      }
+    ]
+  },
+  "commitment_section": {
+    "title": "Our Core Values english",
+    "columns": [
+      {
+        "title": "Compassionate Care",
+        "text": "Empathetic support tailored to individual needs"
+      },
+      {
+        "title": "Professional Excellence",
+        "text": "Licensed practitioners with proven expertise"
+      },
+      {
+        "title": "Confidentiality",
+        "text": "Secure and private therapy sessions"
+      }
+    ]
+  },
+  "doctors": {
+    "title": "Our Expert Team english",
+    "list": [
+      {
+        "name": "Dr. Amira Youssef",
+        "title": "Clinical Psychologist",
+        "description": "Specializing in cognitive behavioral therapy with 10+ years of experience",
+        "image": "/src/assets/headshots/amira.jpeg"
+      },
+      {
+        "name": "Dr. Emil Nabil",
+        "title": "Psychiatrist",
+        "description": "Expert in pharmacological treatments and mood disorders",
+        "image": "/images/dr-chen.jpg"
+      },
+      {
+        "name": "Dr. Hend",
+        "title": "Psychologist",
+        "description": "fill later",
+        "image": "edit"
+      }
+    ]
+  },
+  "categories": {
+    "depression": {
+      "name": "Depression",
+      "slidertitle": "Depression",
+      "hero": {
+        "title": "Understanding Depression",
+        "text": "Professional support for depressive disorders...",
+        "image": "/images/depression-hero.jpg"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Persistent sadness, loss of interest..."
+        },
+        {
+          "title": "Treatment",
+          "content": "Evidence-based CBT therapies..."
+        },
+        {
+          "title": "Recovery",
+          "content": "Typical improvement within 6-8 weeks..."
+        }
+      ],
+      "doctors": [
+        "dr_sarah",
+        "dr_chen"
+      ]
+    },
+    "anxiety": {
+      "name": "Anxiety",
+      "slidertitle": "Anxiety",
+      "hero": {
+        "title": "Managing Anxiety",
+        "text": "Effective strategies for anxiety relief...",
+        "image": "/images/anxiety-hero.jpg"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Excessive worry, panic attacks..."
+        },
+        {
+          "title": "Treatment",
+          "content": "Mindfulness-based approaches..."
+        },
+        {
+          "title": "Support",
+          "content": "24/7 crisis support available..."
+        }
+      ],
+      "doctors": [
+        "dr_amina"
+      ]
+    },
+    "addiction": {
+      "name": "Addiction",
+      "slidertitle": "Addiction",
+      "hero": {
+        "title": "Overcoming Addiction",
+        "text": "Comprehensive support for substance and behavioral dependencies...",
+        "image": "/images/addiction-hero.jpg"
+      },
+      "info_columns": [
+        {
+          "title": "Patterns",
+          "content": "Compulsive behavior, loss of control..."
+        },
+        {
+          "title": "Treatment",
+          "content": "Behavioral therapies and support groups..."
+        },
+        {
+          "title": "Recovery",
+          "content": "Personalized long-term recovery plans..."
+        }
+      ],
+      "doctors": [
+        "dr_chen",
+        "dr_amina"
+      ]
+    },
+    "ocd": {
+      "name": "OCD",
+      "slidertitle": "OCD",
+      "hero": {
+        "title": "Managing OCD",
+        "text": "Specialized care for obsessive-compulsive patterns...",
+        "image": "/images/ocd-hero.jpg"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Intrusive thoughts, repetitive rituals..."
+        },
+        {
+          "title": "Treatment",
+          "content": "ERP therapy and medication management..."
+        },
+        {
+          "title": "Support",
+          "content": "Strategies to reduce compulsive behaviors..."
+        }
+      ],
+      "doctors": [
+        "dr_sarah"
+      ]
+    },
+    "adhd": {
+      "name": "ADHD",
+      "slidertitle": "ADHD",
+      "hero": {
+        "title": "Thriving with ADHD",
+        "text": "Tailored strategies for focus and emotional regulation...",
+        "image": "/images/adhd-hero.jpg"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Inattention, hyperactivity, impulsivity..."
+        },
+        {
+          "title": "Treatment",
+          "content": "Behavioral interventions and medication..."
+        },
+        {
+          "title": "Support",
+          "content": "Tools for organization and time management..."
+        }
+      ],
+      "doctors": [
+        "dr_sarah",
+        "dr_chen"
+      ]
+    }
+  }
+}
