@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
 const AdminForm = () => {
   const [doctors, setDoctors] = useState([]);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
@@ -11,31 +13,23 @@ const AdminForm = () => {
     name_ar: '',
     title_ar: '',
     description_ar: '',
-    image: ''
+    image: null,
+    availability: {} // New availability field
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  // Fetch doctors from the server
   useEffect(() => {
-    const fetchDoctors = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/doctors');
-        setDoctors(response.data);
-      } catch (error) {
-        console.error('Error fetching doctors:', error);
-      }
-    };
-
-    fetchDoctors();
+    axios.get('http://localhost:5000/doctors')
+      .then((res) => setDoctors(res.data))
+      .catch((err) => console.error('Error fetching doctors:', err));
   }, []);
 
-  // Update form when a doctor is selected
+  // Handle doctor selection
   const handleDoctorSelect = (e) => {
     const doctorId = e.target.value;
     if (doctorId === "new") {
-      // Reset form for adding a new doctor
       setSelectedDoctor(null);
       setFormData({
         name_en: '',
@@ -44,22 +38,41 @@ const AdminForm = () => {
         name_ar: '',
         title_ar: '',
         description_ar: '',
-        image: ''
+        image: null,
+        availability: {} // Reset availability
       });
     } else {
       const doctor = doctors.find(doc => doc.id === parseInt(doctorId));
       if (doctor) {
         setSelectedDoctor(doctor.id);
-        setFormData(doctor);
+        setFormData({ ...doctor, image: null });
       }
     }
   };
 
+  // Handle input changes for text fields
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // Handle image upload
+  const handleFileChange = (e) => {
+    setFormData(prev => ({ ...prev, image: e.target.files[0] }));
+  };
+
+  // Handle availability changes
+  const handleAvailabilityChange = (day, field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      availability: {
+        ...prev.availability,
+        [day]: { ...prev.availability[day], [field]: value }
+      }
+    }));
+  };
+
+  // Submit form (handles both add & update)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -67,23 +80,52 @@ const AdminForm = () => {
     setSuccess(false);
 
     try {
-      if (selectedDoctor === null) {
-        // Add new doctor
-        await axios.post('http://localhost:5000/add-doctor', formData);
-      } else {
-        // Update existing doctor
-        await axios.put(`http://localhost:5000/update-doctor/${selectedDoctor}`, formData);
-      }
+        const formDataToSend = new FormData();
+        const requestData = {
+            en: {
+                name: formData.name_en,
+                title: formData.title_en,
+                description: formData.description_en,
+                availability: formData.availability
+            },
+            ar: {
+                name: formData.name_ar,
+                title: formData.title_ar,
+                description: formData.description_ar,
+                availability: formData.availability
+            }
+        };
 
-      setSuccess(true);
-      window.location.reload(); // Refresh to update doctors list
+        formDataToSend.append("data", JSON.stringify(requestData));
+        if (formData.image) formDataToSend.append("image", formData.image);
+
+        console.log("Submitting doctor update:", requestData);
+
+        const url = selectedDoctor === null ? "add-doctor" : `update-doctor/${selectedDoctor}`;
+        await axios({
+            method: selectedDoctor === null ? "POST" : "PUT",
+            url: `http://localhost:5000/${url}`,
+            data: formDataToSend,
+            headers: { "Content-Type": "multipart/form-data" }
+        });
+
+        setSuccess(true);
+
+        // Reload doctor list after adding/updating
+        const updatedDoctors = await axios.get('http://localhost:5000/doctors');
+        setDoctors(updatedDoctors.data);
+
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to save doctor');
+        console.error("Error updating doctor:", err);
+        setError(err.response?.data?.message || 'Failed to save doctor');
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+};
 
+
+
+  // Handle doctor deletion
   const handleDelete = async () => {
     if (!selectedDoctor) return;
     const confirmDelete = window.confirm("Are you sure you want to delete this doctor?");
@@ -92,7 +134,7 @@ const AdminForm = () => {
     try {
       await axios.delete(`http://localhost:5000/delete-doctor/${selectedDoctor}`);
       setSelectedDoctor(null);
-      window.location.reload(); // Refresh to update doctors list
+      window.location.reload();
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to delete doctor');
     }
@@ -118,7 +160,7 @@ const AdminForm = () => {
         </select>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-8 divide-y divide-gray-200 mt-6">
+        <form onSubmit={handleSubmit} className="space-y-8 divide-y divide-gray-200 mt-6" encType="multipart/form-data">
           {/* English Section */}
           <div>
             <h2 className="text-xl font-medium text-gray-900">English Version</h2>
@@ -135,8 +177,23 @@ const AdminForm = () => {
             <textarea name="description_ar" value={formData.description_ar} onChange={handleInputChange} placeholder="Description (Arabic)" className="mt-2 block w-full p-2 border rounded" required />
           </div>
 
-          {/* Image */}
-          <input type="text" name="image" value={formData.image} onChange={handleInputChange} placeholder="Image URL" className="mt-2 block w-full p-2 border rounded" required />
+          {/* Image Upload */}
+          <div>
+            <h2 className="text-xl font-medium text-gray-900">Upload Image</h2>
+            <input type="file" name="image" accept="image/*" onChange={handleFileChange} className="mt-2 block w-full p-2 border rounded" />
+          </div>
+
+          {/* Availability Section */}
+          <div>
+            <h2 className="text-xl font-medium text-gray-900">Availability</h2>
+            {DAYS.map(day => (
+              <div key={day} className="flex space-x-2 mt-2">
+                <label className="w-24">{day}</label>
+                <input type="time" onChange={(e) => handleAvailabilityChange(day, "start", e.target.value)} />
+                <input type="time" onChange={(e) => handleAvailabilityChange(day, "end", e.target.value)} />
+              </div>
+            ))}
+          </div>
 
           <div className="flex justify-between">
             <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded">{loading ? 'Saving...' : 'Save Doctor'}</button>

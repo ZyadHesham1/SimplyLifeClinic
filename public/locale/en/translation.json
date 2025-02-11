@@ -1,7 +1,5 @@
 {
-
   "title": "Simply Life",
-
   "navbar": {
     "home": "Home",
     "test": "Online Tests",
@@ -9,8 +7,6 @@
     "logo_alt": "Logo",
     "title": "Simply Life"
   },
-
-
   "hero": {
     "title": "Your Mental Health Matters",
     "subtitle": "Professional care and support for your wellbeing journey",
@@ -69,19 +65,73 @@
         "name": "Dr. Amira Youssef",
         "title": "Clinical Psychologist",
         "description": "Specializing in cognitive behavioral therapy with 10+ years of experience",
-        "image": "/src/assets/headshots/amira.jpeg"
+        "image": "/src/assets/headshots/amira.jpeg",
+        "availability": {
+          "monday": {
+            "start": "0800",
+            "end": "1400"
+          },
+          "tuesday": {
+            "start": "0800",
+            "end": "1400"
+          },
+          "wednesday": {
+            "start": "0800",
+            "end": "1400"
+          }
+        }
       },
       {
         "name": "Dr. Emil Nabil",
         "title": "Psychiatrist",
         "description": "Expert in pharmacological treatments and mood disorders",
-        "image": "/images/dr-chen.jpg"
+        "image": "/images/dr-chen.jpg",
+        "availability": {
+          "sunday": {
+            "start": "1000",
+            "end": "1600"
+          },
+          "tuesday": {
+            "start": "1200",
+            "end": "1800"
+          },
+          "friday": {
+            "start": "0900",
+            "end": "1300"
+          }
+        }
       },
       {
         "name": "Dr. Hend",
         "title": "Psychologist",
         "description": "fill later",
-        "image": "edit"
+        "image": "edit",
+        "availability": {
+          "monday": {
+            "start": "0900",
+            "end": "1500"
+          },
+          "thursday": {
+            "start": "1100",
+            "end": "1700"
+          }
+        }
+      },
+      {
+        "name": "test en",
+        "title": "test",
+        "description": "asdf",
+        "availability": {
+          "monday": {
+            "start": "0859",
+            "end": "1759"
+          },
+          "thursday": {
+            "start": "1000",
+            "end": "1700"
+          }
+        },
+        "image": "/src/assets/headshots/1739289580096-Screenshot from 2025-01-29 23-22-17.png"
       }
     ]
   },

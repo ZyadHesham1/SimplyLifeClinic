@@ -1,6 +1,5 @@
 {
   "title": "Simply Life",
-
   "navbar": {
     "home": "الصفحة الرئيسية",
     "test": "اختبارات عبر الإنترنت",
@@ -8,7 +7,6 @@
     "logo_alt": "الشعار",
     "title": "حياة بسيطة"
   },
-
   "hero": {
     "title": "صحتك النفسية تهمنا",
     "subtitle": "رعاية ودعم احترافي لرحلتك نحو العافية",
@@ -61,25 +59,81 @@
     ]
   },
   "doctors": {
-    "title": "فريقنا المتخصص",
+    "title": "Our Expert Team english",
     "list": [
       {
-        "name": "د. سارة جونسون",
-        "title": "أخصائية علم النفس السريري",
-        "description": "متخصصة في العلاج السلوكي المعرفي مع أكثر من 10 سنوات من الخبرة",
-        "image": "/src/assets/headshots/amira.jpeg"
+        "name": "Dr. Amira Youssef",
+        "title": "Clinical Psychologist",
+        "description": "Specializing in cognitive behavioral therapy with 10+ years of experience",
+        "image": "/src/assets/headshots/1739285345864-amira.jpeg"
       },
       {
-        "name": "د. أيميل نبيل",
-        "title": "طبيب نفسي",
-        "description": "خبير في العلاجات الدوائية واضطرابات المزاج",
-        "image": "/images/dr-chen.jpg"
+        "name": "Dr. Emil Nabil",
+        "title": "Psychiatrist",
+        "description": "Expert in pharmacological treatments and mood disorders",
+        "image": "/images/dr-chen.jpg",
+        "availability": {
+          "sunday": {
+            "start": "1000",
+            "end": "1600"
+          },
+          "tuesday": {
+            "start": "1200",
+            "end": "1800"
+          },
+          "friday": {
+            "start": "0900",
+            "end": "1300"
+          }
+        }
       },
       {
-        "name": "د. هند",
-        "title": "change",
-        "description": "change",
-        "image": "edit"
+        "name": "Dr. Hend",
+        "title": "Psychologist",
+        "description": "fill later",
+        "image": "edit",
+        "availability": {
+          "monday": {
+            "start": "0900",
+            "end": "1500"
+          },
+          "thursday": {
+            "start": "1100",
+            "end": "1700"
+          }
+        }
+      },
+      {
+        "name": "Dr. zyad",
+        "title": "eng",
+        "description": "fill later",
+        "image": "edit",
+        "availability": {
+          "monday": {
+            "start": "0900",
+            "end": "1500"
+          },
+          "thursday": {
+            "start": "1000",
+            "end": "1700"
+          }
+        }
+      },
+      {
+        "name": "test ar",
+        "title": "test ar",
+        "description": "asdfsad",
+        "availability": {
+          "monday": {
+            "start": "0859",
+            "end": "1759"
+          },
+          "thursday": {
+            "start": "0859",
+            "end": "1759"
+          }
+        },
+        "image": "/src/assets/headshots/1739289580096-Screenshot from 2025-01-29 23-22-17.png"
       }
     ]
   },

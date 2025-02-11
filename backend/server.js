@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const path = require('path');
+const multer = require('multer');
 
 const app = express();
 const PORT = 5000;
@@ -12,7 +13,24 @@ app.use(express.json());
 const enFilePath = path.join(__dirname, '../public/locale/en/translation.json');
 const arFilePath = path.join(__dirname, '../public/locale/ar/translation.json');
 
-// Utility function to read JSON files
+// Configure multer for image uploads
+const uploadDir = path.join(__dirname, '../src/assets/headshots/');
+fs.mkdir(uploadDir, { recursive: true }).catch(console.error);
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => cb(null, uploadDir),
+    filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
+});
+const upload = multer({
+    storage,
+    limits: { fileSize: 1 * 1024 * 1024 }, // 1MB limit
+    fileFilter: (req, file, cb) => {
+        const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+        allowedMimeTypes.includes(file.mimetype) ? cb(null, true) : cb(new Error('Invalid file type.'));
+    }
+});
+
+// Utility functions to read and write JSON
 const readJsonFile = async (filePath) => {
     try {
         const data = await fs.readFile(filePath, 'utf8');
@@ -23,7 +41,6 @@ const readJsonFile = async (filePath) => {
     }
 };
 
-// Utility function to write JSON files
 const writeJsonFile = async (filePath, data) => {
     try {
         await fs.writeFile(filePath, JSON.stringify(data, null, 2));
@@ -38,19 +55,18 @@ app.get('/doctors', async (req, res) => {
         const enData = await readJsonFile(enFilePath);
         const arData = await readJsonFile(arFilePath);
 
-        if (!enData || !arData) {
-            return res.status(500).json({ message: 'Error loading doctors data' });
-        }
+        if (!enData || !arData) return res.status(500).json({ message: 'Error loading doctors data' });
 
-        const doctors = Object.keys(enData.doctors.list).map(id => ({
-            id: parseInt(id),
-            name_en: enData.doctors.list[id].name,
-            title_en: enData.doctors.list[id].title,
-            description_en: enData.doctors.list[id].description,
-            name_ar: arData.doctors.list[id].name,
-            title_ar: arData.doctors.list[id].title,
-            description_ar: arData.doctors.list[id].description,
-            image: enData.doctors.list[id].image
+        const doctors = enData.doctors.list.map((doctor, index) => ({
+            id: index, // Use index as ID
+            name_en: doctor.name,
+            title_en: doctor.title,
+            description_en: doctor.description,
+            name_ar: arData.doctors.list[index].name,
+            title_ar: arData.doctors.list[index].title,
+            description_ar: arData.doctors.list[index].description,
+            image: doctor.image,
+            availability: doctor.availability || {}
         }));
 
         res.json(doctors);
@@ -60,72 +76,75 @@ app.get('/doctors', async (req, res) => {
     }
 });
 
-// **POST - Add a new doctor**
-app.post('/add-doctor', async (req, res) => {
+// Utility function to format availability correctly
+const formatAvailability = (availability) => {
+    if (!availability) return {};
+
+    const formatted = {};
+    Object.keys(availability).forEach(day => {
+        const lowerDay = day.toLowerCase(); // Convert day names to lowercase
+        formatted[lowerDay] = {
+            start: availability[day].start.replace(":", ""), // Remove colon (17:50 -> 1750)
+            end: availability[day].end.replace(":", "")
+        };
+    });
+
+    return formatted;
+};
+
+// **POST - Add a new doctor (ensuring correct availability format)**
+app.post('/add-doctor', upload.single('image'), async (req, res) => {
     try {
-        const newDoctor = req.body;
+        const { en, ar } = JSON.parse(req.body.data);
         const enData = await readJsonFile(enFilePath);
         const arData = await readJsonFile(arFilePath);
 
-        if (!enData || !arData) {
-            return res.status(500).json({ message: 'Error loading doctors data' });
-        }
+        if (!enData || !arData) return res.status(500).json({ message: 'Error loading doctors data' });
 
-        const newId = Object.keys(enData.doctors.list).length; // Get new doctor ID
+        const newId = enData.doctors.list.length;
+        const imagePath = req.file ? `/src/assets/headshots/${req.file.filename}` : null;
 
-        enData.doctors.list[newId] = {
-            name: newDoctor.name_en,
-            title: newDoctor.title_en,
-            description: newDoctor.description_en,
-            image: newDoctor.image
-        };
+        // Format availability before saving
+        en.availability = formatAvailability(en.availability);
+        ar.availability = formatAvailability(ar.availability);
 
-        arData.doctors.list[newId] = {
-            name: newDoctor.name_ar,
-            title: newDoctor.title_ar,
-            description: newDoctor.description_ar,
-            image: newDoctor.image
-        };
+        // Store English and Arabic separately
+        enData.doctors.list.push({ ...en, image: imagePath });
+        arData.doctors.list.push({ ...ar, image: imagePath });
 
         await writeJsonFile(enFilePath, enData);
         await writeJsonFile(arFilePath, arData);
 
-        res.status(201).json({ message: 'Doctor added successfully', id: newId });
+        console.log("✅ Doctor added successfully!");
+        res.status(201).json({ message: "Doctor added successfully", id: newId });
     } catch (error) {
-        console.error('Error adding doctor:', error);
-        res.status(500).json({ message: 'Failed to add doctor' });
+        console.error("❌ Error adding doctor:", error);
+        res.status(500).json({ message: "Failed to add doctor", error: error.message });
     }
 });
 
-// **PUT - Update an existing doctor**
-app.put('/update-doctor/:id', async (req, res) => {
+// **PUT - Update a doctor with correct availability format**
+app.put('/update-doctor/:id', upload.single('image'), async (req, res) => {
     try {
-        const { id } = req.params;
-        const updatedDoctor = req.body;
+        const doctorId = parseInt(req.params.id);
+        const { en, ar } = JSON.parse(req.body.data);
         const enData = await readJsonFile(enFilePath);
         const arData = await readJsonFile(arFilePath);
 
-        if (!enData || !arData) {
-            return res.status(500).json({ message: 'Error loading doctors data' });
-        }
-
-        if (!enData.doctors.list[id] || !arData.doctors.list[id]) {
+        if (!enData || !arData || !enData.doctors.list[doctorId]) {
+            console.error(`Error: Doctor with ID ${doctorId} not found.`);
             return res.status(404).json({ message: 'Doctor not found' });
         }
 
-        enData.doctors.list[id] = {
-            name: updatedDoctor.name_en,
-            title: updatedDoctor.title_en,
-            description: updatedDoctor.description_en,
-            image: updatedDoctor.image
-        };
+        const imagePath = req.file ? `/src/assets/headshots/${req.file.filename}` : enData.doctors.list[doctorId].image;
 
-        arData.doctors.list[id] = {
-            name: updatedDoctor.name_ar,
-            title: updatedDoctor.title_ar,
-            description: updatedDoctor.description_ar,
-            image: updatedDoctor.image
-        };
+        // Format availability before updating
+        en.availability = formatAvailability(en.availability);
+        ar.availability = formatAvailability(ar.availability);
+
+        // Update English and Arabic separately
+        enData.doctors.list[doctorId] = { ...en, image: imagePath };
+        arData.doctors.list[doctorId] = { ...ar, image: imagePath };
 
         await writeJsonFile(enFilePath, enData);
         await writeJsonFile(arFilePath, arData);
@@ -140,22 +159,14 @@ app.put('/update-doctor/:id', async (req, res) => {
 // **DELETE - Remove a doctor**
 app.delete('/delete-doctor/:id', async (req, res) => {
     try {
-        const { id } = req.params; // The doctor index to be removed
+        const doctorId = parseInt(req.params.id);
         const enData = await readJsonFile(enFilePath);
         const arData = await readJsonFile(arFilePath);
 
-        if (!enData || !arData || !enData.doctors.list || !arData.doctors.list) {
-            return res.status(500).json({ message: 'Error loading doctors data' });
-        }
+        if (!enData || !arData || !enData.doctors.list[doctorId]) return res.status(404).json({ message: 'Doctor not found' });
 
-        // Ensure ID is a valid index
-        if (id < 0 || id >= enData.doctors.list.length) {
-            return res.status(404).json({ message: 'Doctor not found' });
-        }
-
-        // Remove the doctor from the list (use `.filter()` to avoid leaving `null`)
-        enData.doctors.list = enData.doctors.list.filter((_, index) => index != id);
-        arData.doctors.list = arData.doctors.list.filter((_, index) => index != id);
+        enData.doctors.list.splice(doctorId, 1);
+        arData.doctors.list.splice(doctorId, 1);
 
         await writeJsonFile(enFilePath, enData);
         await writeJsonFile(arFilePath, arData);
@@ -167,9 +178,5 @@ app.delete('/delete-doctor/:id', async (req, res) => {
     }
 });
 
-
-
 // **Start the server**
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
