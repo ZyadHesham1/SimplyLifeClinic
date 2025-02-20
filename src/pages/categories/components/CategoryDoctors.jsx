@@ -1,8 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import DrCard from '../../../components/DrCard';
 
-const CategoryDoctors = ({ doctorIds }) => {
+const CategoryDoctors = ({ categoryId }) => {
   const { t } = useTranslation();
+
+  // Get all doctors from JSON
+  const doctors = t('doctors.list', { returnObjects: true });
+
+  // Filter doctors who have this category in their "categories" array
+  const filteredDoctors = Object.values(doctors).filter((doctor) =>
+    doctor.categories?.includes(categoryId)
+  );
 
   return (
     <div className="w-full py-16 bg-gray-50">
@@ -11,10 +19,9 @@ const CategoryDoctors = ({ doctorIds }) => {
           {t('CategoryDoctors.specialists_title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {doctorIds.map((doctorId) => {
-            const doctor = t(`CategoryDoctors.${doctorId}`, { returnObjects: true });
-            return <DrCard key={doctorId} {...doctor} />;
-          })}
+          {filteredDoctors.map((doctor) => (
+            <DrCard key={doctor.name} {...doctor} />
+          ))}
         </div>
       </div>
     </div>

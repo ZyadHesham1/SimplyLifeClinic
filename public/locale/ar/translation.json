@@ -9,7 +9,7 @@
   },
   "hero": {
     "title": "صحتك النفسية تهمنا",
-    "subtitle": "رعاية ودعم احترافي لرحلتك نحو العافية",
+    "subtitle": "يدا في يد نفهمك , ندعمك , نساعدك من اجل حياة نفسية متوازنة .",
     "list_item_1": "خطط علاجية مخصصة",
     "list_item_2": "معالجون ذوو خبرة وتعاطف",
     "list_item_3": "جلسات سرية وآمنة",
@@ -65,7 +65,25 @@
         "name": "Dr. Amira Youssef",
         "title": "Clinical Psychologist",
         "description": "Specializing in cognitive behavioral therapy with 10+ years of experience",
-        "image": "/src/assets/headshots/1739285345864-amira.jpeg"
+        "availability": {
+          "monday": {
+            "start": "0800",
+            "end": "1400"
+          },
+          "tuesday": {
+            "start": "0800",
+            "end": "1400"
+          },
+          "wednesday": {
+            "start": "0800",
+            "end": "1400"
+          }
+        },
+        "categories": [
+          "adhd",
+          "ocd"
+        ],
+        "image": "/src/assets/headshots/amira.jpeg"
       },
       {
         "name": "Dr. Emil Nabil",
@@ -102,40 +120,23 @@
             "end": "1700"
           }
         }
-      },
-      {
-        "name": "Dr. zyad",
-        "title": "eng",
-        "description": "fill later",
-        "image": "edit",
-        "availability": {
-          "monday": {
-            "start": "0900",
-            "end": "1500"
-          },
-          "thursday": {
-            "start": "1000",
-            "end": "1700"
-          }
-        }
-      },
-      {
-        "name": "test ar",
-        "title": "test ar",
-        "description": "asdfsad",
-        "availability": {
-          "monday": {
-            "start": "0859",
-            "end": "1759"
-          },
-          "thursday": {
-            "start": "0859",
-            "end": "1759"
-          }
-        },
-        "image": "/src/assets/headshots/1739289580096-Screenshot from 2025-01-29 23-22-17.png"
       }
     ]
+  },
+  "Resources": "الموارد",
+  "Follow us": "تابعنا",
+  "Legal": "القانوني",
+  "Simply Life": "سمبلي لايف",
+  "Facebook": "فيسبوك",
+  "Instagram": "انستغرام",
+  "Privacy Policy": "سياسة الخصوصية",
+  "Terms & Conditions": "الشروط والأحكام",
+  "All Rights Reserved": "جميع الحقوق محفوظة",
+  "Social Media": {
+    "Facebook page": "صفحة فيسبوك",
+    "Twitter page": "صفحة تويتر",
+    "Instagram": "انستغرام",
+    "GitHub account": "حساب جيت هاب"
   },
   "categories": {
     "depression": {
@@ -144,7 +145,7 @@
       "hero": {
         "title": "فهم الاكتئاب",
         "text": "دعم احترافي لاضطرابات الاكتئاب...",
-        "image": "/images/depression-hero.jpg"
+        "image": "../src/assets/depression pic.jpg"
       },
       "info_columns": [
         {
@@ -159,10 +160,6 @@
           "title": "التعافي",
           "content": "تحسن ملحوظ خلال 6-8 أسابيع..."
         }
-      ],
-      "doctors": [
-        "dr_sarah",
-        "dr_chen"
       ]
     },
     "anxiety": {
@@ -171,7 +168,7 @@
       "hero": {
         "title": "إدارة القلق",
         "text": "استراتيجيات فعالة للتخفيف من القلق...",
-        "image": "/images/anxiety-hero.jpg"
+        "image": "../src/assets/anxiety pic.jpg"
       },
       "info_columns": [
         {
@@ -186,9 +183,6 @@
           "title": "الدعم",
           "content": "دعم متاح على مدار الساعة..."
         }
-      ],
-      "doctors": [
-        "dr_amina"
       ]
     },
     "addiction": {
@@ -197,7 +191,7 @@
       "hero": {
         "title": "التغلب على الإدمان",
         "text": "دعم شامل للإدمان السلوكي وإدمان المواد...",
-        "image": "/images/addiction-hero.jpg"
+        "image": "../src/assets/addiction pic.png"
       },
       "info_columns": [
         {
@@ -212,10 +206,6 @@
           "title": "التعافي",
           "content": "خطط تعافٍ طويلة الأمد مخصصة..."
         }
-      ],
-      "doctors": [
-        "dr_chen",
-        "dr_amina"
       ]
     },
     "ocd": {
@@ -224,7 +214,7 @@
       "hero": {
         "title": "إدارة اضطراب الوسواس القهري",
         "text": "رعاية متخصصة لأنماط الوسواس القهري...",
-        "image": "/images/ocd-hero.jpg"
+        "image": "../src/assets/ocd pic.jpg"
       },
       "info_columns": [
         {
@@ -239,9 +229,29 @@
           "title": "الدعم",
           "content": "استراتيجيات للحد من السلوك القهري..."
         }
-      ],
-      "doctors": [
-        "dr_sarah"
+      ]
+    },
+    "adhd": {
+      "name": "ADHD",
+      "slidertitle": "ADHD",
+      "hero": {
+        "title": "Thriving with ADHD",
+        "text": "Tailored strategies for focus and emotional regulation...",
+        "image": "../src/assets/adhd pic.png"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Inattention, hyperactivity, impulsivity..."
+        },
+        {
+          "title": "Treatment",
+          "content": "Behavioral interventions and medication..."
+        },
+        {
+          "title": "Support",
+          "content": "Tools for organization and time management..."
+        }
       ]
     }
   }

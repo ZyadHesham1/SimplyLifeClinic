@@ -5,6 +5,8 @@ import Hero from '../components/Hero'
 import OurMessage from '../components/OurMessage'
 import OurCommitment from '../components/OurCommitment'
 import MainDrs from '../components/MainDrs'
+import LanguageModal from "../components/LanguageModal";
+
 
 const HomePage = () => {
     const { t, i18n } = useTranslation();
@@ -12,7 +14,7 @@ const HomePage = () => {
     return (
       <>
 
-        <button
+        {/* <button
           onClick={()=> {
             i18n.changeLanguage("ar");
           }}
@@ -22,7 +24,8 @@ const HomePage = () => {
           onClick={()=>{
             i18n.changeLanguage("en")
           }}
-        >English</button>
+        >English</button> */}
+        <LanguageModal />
       
       
         <CatSlider/>

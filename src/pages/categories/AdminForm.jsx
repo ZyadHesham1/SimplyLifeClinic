@@ -14,11 +14,34 @@ const AdminForm = () => {
     title_ar: '',
     description_ar: '',
     image: null,
-    availability: {} // New availability field
+    availability: {},
+    categories: []
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+  const [availableCategories, setAvailableCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/categories');
+        setAvailableCategories(response.data);
+      } catch (err) {
+        console.error('Error fetching categories:', err);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  const handleCategoryChange = (category) => {
+    setFormData(prev => ({
+      ...prev,
+      categories: prev.categories.includes(category)
+        ? prev.categories.filter(c => c !== category)
+        : [...prev.categories, category]
+    }));
+  };
 
   useEffect(() => {
     axios.get('http://localhost:5000/doctors')
@@ -39,13 +62,18 @@ const AdminForm = () => {
         title_ar: '',
         description_ar: '',
         image: null,
-        availability: {} // Reset availability
+        availability: {},
+        categories: []
       });
     } else {
       const doctor = doctors.find(doc => doc.id === parseInt(doctorId));
       if (doctor) {
         setSelectedDoctor(doctor.id);
-        setFormData({ ...doctor, image: null });
+        setFormData({
+          ...doctor, 
+          image: null, 
+          categories: doctor.categories || []
+        });
       }
     }
   };
@@ -86,20 +114,20 @@ const AdminForm = () => {
                 name: formData.name_en,
                 title: formData.title_en,
                 description: formData.description_en,
-                availability: formData.availability
+                availability: formData.availability,
+                categories: formData.categories
             },
             ar: {
                 name: formData.name_ar,
                 title: formData.title_ar,
                 description: formData.description_ar,
-                availability: formData.availability
+                availability: formData.availability,
+                categories: formData.categories
             }
         };
 
         formDataToSend.append("data", JSON.stringify(requestData));
         if (formData.image) formDataToSend.append("image", formData.image);
-
-        console.log("Submitting doctor update:", requestData);
 
         const url = selectedDoctor === null ? "add-doctor" : `update-doctor/${selectedDoctor}`;
         await axios({
@@ -121,9 +149,7 @@ const AdminForm = () => {
     } finally {
         setLoading(false);
     }
-};
-
-
+  };
 
   // Handle doctor deletion
   const handleDelete = async () => {
@@ -181,6 +207,28 @@ const AdminForm = () => {
           <div>
             <h2 className="text-xl font-medium text-gray-900">Upload Image</h2>
             <input type="file" name="image" accept="image/*" onChange={handleFileChange} className="mt-2 block w-full p-2 border rounded" />
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h2 className="text-xl font-medium text-gray-900">Specializations</h2>
+            <div className="grid grid-cols-2 gap-2 mt-4">
+              {availableCategories.map((category) => (
+                <label key={category.key} className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    checked={formData.categories.includes(category.key)}
+                    onChange={() => handleCategoryChange(category.key)}
+                    className="form-checkbox h-4 w-4"
+                  />
+                  <span className="flex space-x-2">
+                    <span>{category.label_en}</span> {/* English label */}
+                    <span>/</span> {/* Separator */}
+                    <span>{category.label_ar}</span> {/* Arabic label */}
+                  </span>
+                </label>
+              ))}
+            </div>
           </div>
 
           {/* Availability Section */}

@@ -76,6 +76,80 @@ app.get('/doctors', async (req, res) => {
     }
 });
 
+app.get('/categories', async (req, res) => {
+    try {
+        const enData = await readJsonFile(enFilePath);
+        const arData = await readJsonFile(arFilePath);
+
+        if (!enData || !arData) {
+            console.error("❌ Error: JSON files not loaded properly.");
+            return res.status(500).json({ message: "Error loading category data" });
+        }
+
+        if (!enData.categories || !arData.categories) {
+            console.error("❌ Error: Categories section missing in one of the JSON files.");
+            return res.status(500).json({ message: "Categories not found in one of the JSON files" });
+        }
+
+        // Extract category keys and their respective names
+        const categories = Object.keys(enData.categories).map(key => {
+            if (!enData.categories[key]?.name || !arData.categories[key]?.name) {
+                console.error(`❌ Missing 'name' field for category: ${key}`);
+            }
+
+            return {
+                key,
+                label_en: enData.categories[key]?.name || "Unknown", // Fallback to avoid crashes
+                label_ar: arData.categories[key]?.name || "Unknown"
+            };
+        });
+
+        console.log("✅ Successfully fetched categories:", categories);
+        res.json(categories);
+    } catch (error) {
+        console.error("❌ Error fetching categories:", error);
+        res.status(500).json({ message: "Internal server error", error: error.message });
+    }
+});
+
+
+// **PUT - Update a doctor's categories in both English and Arabic files**
+app.put('/update-doctor-categories/:id', async (req, res) => {
+    try {
+        const doctorId = parseInt(req.params.id);
+        const { categoriesToAdd } = req.body; // Expected to be an array of new categories to add
+        const enData = await readJsonFile(enFilePath);
+        const arData = await readJsonFile(arFilePath);
+
+        if (!enData || !arData || !enData.doctors.list[doctorId]) {
+            console.error(`Error: Doctor with ID ${doctorId} not found.`);
+            return res.status(404).json({ message: 'Doctor not found' });
+        }
+
+        // Check if categoriesToAdd is an array
+        if (!Array.isArray(categoriesToAdd)) {
+            return res.status(400).json({ message: "Invalid categories format, expected an array" });
+        }
+
+        // Add categories to the doctor in both English and Arabic
+        enData.doctors.list[doctorId].categories = [
+            ...new Set([...enData.doctors.list[doctorId].categories, ...categoriesToAdd]) // Prevent duplicates
+        ];
+        arData.doctors.list[doctorId].categories = [
+            ...new Set([...arData.doctors.list[doctorId].categories, ...categoriesToAdd]) // Prevent duplicates
+        ];
+
+        // Write back the updated data to both files
+        await writeJsonFile(enFilePath, enData);
+        await writeJsonFile(arFilePath, arData);
+
+        console.log("✅ Doctor categories updated successfully!");
+        res.json({ message: 'Doctor categories updated successfully' });
+    } catch (error) {
+        console.error('❌ Error updating doctor categories:', error);
+        res.status(500).json({ message: 'Failed to update doctor categories' });
+    }
+});
 // Utility function to format availability correctly
 const formatAvailability = (availability) => {
     if (!availability) return {};
@@ -122,6 +196,8 @@ app.post('/add-doctor', upload.single('image'), async (req, res) => {
         res.status(500).json({ message: "Failed to add doctor", error: error.message });
     }
 });
+
+
 
 // **PUT - Update a doctor with correct availability format**
 app.put('/update-doctor/:id', upload.single('image'), async (req, res) => {

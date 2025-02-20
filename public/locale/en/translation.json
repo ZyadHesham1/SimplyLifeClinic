@@ -9,7 +9,7 @@
   },
   "hero": {
     "title": "Your Mental Health Matters",
-    "subtitle": "Professional care and support for your wellbeing journey",
+    "subtitle": "Hand in hand, support you, we understand you, and help you for a balanced psychological life.",
     "list_item_1": "Personalized treatment plans",
     "list_item_2": "Experienced and compassionate therapists",
     "list_item_3": "Confidential and secure sessions",
@@ -42,7 +42,7 @@
     ]
   },
   "commitment_section": {
-    "title": "Our Core Values english",
+    "title": "Our Core Values",
     "columns": [
       {
         "title": "Compassionate Care",
@@ -59,13 +59,12 @@
     ]
   },
   "doctors": {
-    "title": "Our Expert Team english",
+    "title": "Our Expert Team",
     "list": [
       {
         "name": "Dr. Amira Youssef",
         "title": "Clinical Psychologist",
         "description": "Specializing in cognitive behavioral therapy with 10+ years of experience",
-        "image": "/src/assets/headshots/amira.jpeg",
         "availability": {
           "monday": {
             "start": "0800",
@@ -79,7 +78,12 @@
             "start": "0800",
             "end": "1400"
           }
-        }
+        },
+        "categories": [
+          "adhd",
+          "ocd"
+        ],
+        "image": "/src/assets/headshots/amira.jpeg"
       },
       {
         "name": "Dr. Emil Nabil",
@@ -116,24 +120,22 @@
             "end": "1700"
           }
         }
-      },
-      {
-        "name": "test en",
-        "title": "test",
-        "description": "asdf",
-        "availability": {
-          "monday": {
-            "start": "0859",
-            "end": "1759"
-          },
-          "thursday": {
-            "start": "1000",
-            "end": "1700"
-          }
-        },
-        "image": "/src/assets/headshots/1739289580096-Screenshot from 2025-01-29 23-22-17.png"
       }
     ]
+  },
+  "Resources": "Resources",
+  "Follow us": "Follow us",
+  "Legal": "Legal",
+  "Simply Life": "Simply Life",
+  "Facebook": "Facebook",
+  "Instagram": "Instagram",
+  "Privacy Policy": "Privacy Policy",
+  "Terms & Conditions": "Terms & Conditions",
+  "All Rights Reserved": "All Rights Reserved",
+  "Social Media": {
+    "Facebook page": "Facebook page",
+    "Twitter page": "Twitter page",
+    "Instagram": "Instagram"
   },
   "categories": {
     "depression": {
@@ -142,7 +144,7 @@
       "hero": {
         "title": "Understanding Depression",
         "text": "Professional support for depressive disorders...",
-        "image": "/images/depression-hero.jpg"
+        "image": "../src/assets/depression pic.jpg"
       },
       "info_columns": [
         {
@@ -157,10 +159,6 @@
           "title": "Recovery",
           "content": "Typical improvement within 6-8 weeks..."
         }
-      ],
-      "doctors": [
-        "dr_sarah",
-        "dr_chen"
       ]
     },
     "anxiety": {
@@ -169,7 +167,7 @@
       "hero": {
         "title": "Managing Anxiety",
         "text": "Effective strategies for anxiety relief...",
-        "image": "/images/anxiety-hero.jpg"
+        "image": "../src/assets/anxiety pic.jpg"
       },
       "info_columns": [
         {
@@ -181,12 +179,13 @@
           "content": "Mindfulness-based approaches..."
         },
         {
+          "title": "Treatment",
+          "content": "Mindfulness-based approaches..."
+        },
+        {
           "title": "Support",
           "content": "24/7 crisis support available..."
         }
-      ],
-      "doctors": [
-        "dr_amina"
       ]
     },
     "addiction": {
@@ -195,7 +194,7 @@
       "hero": {
         "title": "Overcoming Addiction",
         "text": "Comprehensive support for substance and behavioral dependencies...",
-        "image": "/images/addiction-hero.jpg"
+        "image": "../src/assets/addiction pic.png"
       },
       "info_columns": [
         {
@@ -210,10 +209,6 @@
           "title": "Recovery",
           "content": "Personalized long-term recovery plans..."
         }
-      ],
-      "doctors": [
-        "dr_chen",
-        "dr_amina"
       ]
     },
     "ocd": {
@@ -222,7 +217,7 @@
       "hero": {
         "title": "Managing OCD",
         "text": "Specialized care for obsessive-compulsive patterns...",
-        "image": "/images/ocd-hero.jpg"
+        "image": "../src/assets/ocd pic.jpg"
       },
       "info_columns": [
         {
@@ -237,9 +232,6 @@
           "title": "Support",
           "content": "Strategies to reduce compulsive behaviors..."
         }
-      ],
-      "doctors": [
-        "dr_sarah"
       ]
     },
     "adhd": {
@@ -248,7 +240,7 @@
       "hero": {
         "title": "Thriving with ADHD",
         "text": "Tailored strategies for focus and emotional regulation...",
-        "image": "/images/adhd-hero.jpg"
+        "image": "../src/assets/adhd pic.png"
       },
       "info_columns": [
         {
@@ -263,10 +255,6 @@
           "title": "Support",
           "content": "Tools for organization and time management..."
         }
-      ],
-      "doctors": [
-        "dr_sarah",
-        "dr_chen"
       ]
     }
   }

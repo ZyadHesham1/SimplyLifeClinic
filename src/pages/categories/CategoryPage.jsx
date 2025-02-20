@@ -44,8 +44,7 @@ const CategoryPage = () => {
       <TestButton category={categoryId} />
       
       {/* Doctors List */}
-      <CategoryDoctors doctorIds={categoryData.doctors} />
-
+      <CategoryDoctors categoryId={categoryId} />
     </div>
     </>
   );

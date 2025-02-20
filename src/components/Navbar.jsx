@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import logo from '../../zyad/navlogo.png';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import LanguageSwitch from './LanguageSwitch';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -23,7 +24,7 @@ const Navbar = () => {
 
   const navigation = [
     { name: t("navbar.home"), to: "/" },
-    { name: t("navbar.test"), to: "/admin" },
+    //{ name: t("navbar.test"), to: "/admin" },
     { name: t("navbar.appointment"), to: "/calendar" },
     //{ name: t("navbar.disorders"), to: "/category/depression" },
   ];
@@ -34,7 +35,7 @@ const Navbar = () => {
       bg-[var(--color-text)]
       flex ${isRTL ? 'flex-row-reverse' : 'flex-row'}
       justify-between items-center px-6 py-2
-    `}>
+      `}>
       {/* Logo */}
       <Link 
         to="/" 
@@ -47,15 +48,13 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* Title - Centered */}
-      <div className={`
-        absolute left-1/2 transform -translate-x-1/2
-        ${isRTL ? 'rtl:translate-x-1/2' : ''} z-10
-      `}>
+      {/* Title - Always Centered */}
+      <div className="absolute inset-x-0 flex justify-center z-10">
         <h1 className="text-xl font-bold whitespace-nowrap text-[var(--color-background)]">
           {t("navbar.title")}
         </h1>
       </div>
+
 
       {/* Desktop Navigation */}
       <div className={`
@@ -75,8 +74,14 @@ const Navbar = () => {
           >
             {item.name}
           </Link>
+          
         ))}
+        <div className="hidden lg:flex items-center gap-4 relative z-50">
+          <LanguageSwitch />
+        </div>
+
       </div>
+      
 
       {/* Mobile Menu Button */}
       <div className="lg:hidden z-20">
@@ -116,6 +121,7 @@ const Navbar = () => {
             `}
           >
             <div className="px-4 pt-2 space-y-2">
+            <LanguageSwitch />
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -136,6 +142,7 @@ const Navbar = () => {
           </div>
         )}
       </Transition>
+      
     </nav>
   );
 };
