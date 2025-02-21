@@ -9,25 +9,6 @@ const CatSlider = ({ titleKey, link }) => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
   const categories = t('categories', { returnObjects: true });
-  // // Text link data with translation keys
-  // const textLinks = [
-  //   {
-  //     id: 1,
-  //     titleKey: t('categories.depression.name'),
-  //     link: '/category/depression',
-  //   },
-  //   {
-  //     id: 2,
-  //     titleKey: 'tests.title',
-  //     link: '/tests',
-  //   },
-  //   {
-  //     id: 3,
-  //     titleKey: 'appointments.title',
-  //     link: '/appointments',
-  //   },
-  //   // Add more links as needed
-  // ];
 
   // Slider settings for a compact design
   const settings = {
@@ -74,7 +55,7 @@ const CatSlider = ({ titleKey, link }) => {
       <Slider {...settings}>
         {Object.values(categories).map((category) => {
           // Generate URL path from category name
-          const categoryPath = `/category/${category.name.toLowerCase().replace(' ', '-')}`;
+          const categoryPath = `/category/${category.name.toLowerCase().replace(' ', '_')}`;
           
           return (
             <div key={category.name} className="px-2 h-full">

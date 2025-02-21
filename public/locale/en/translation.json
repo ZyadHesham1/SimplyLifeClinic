@@ -86,10 +86,10 @@
         "image": "/src/assets/headshots/amira.jpeg"
       },
       {
-        "name": "Dr. Emil Nabil",
+        "name": "Mr. Emil Nabil",
         "title": "Psychiatrist",
         "description": "Expert in pharmacological treatments and mood disorders",
-        "image": "/images/dr-chen.jpg",
+        "image": "/src/assets/headshots/emil.jpeg",
         "availability": {
           "sunday": {
             "start": "1000",
@@ -109,7 +109,7 @@
         "name": "Dr. Hend",
         "title": "Psychologist",
         "description": "fill later",
-        "image": "edit",
+        "image": "/src/assets/headshots/hend.jpeg",
         "availability": {
           "monday": {
             "start": "0900",
@@ -118,6 +118,42 @@
           "thursday": {
             "start": "1100",
             "end": "1700"
+          }
+        }
+      },
+      {
+        "name": "Appointment",
+        "title": " ",
+        "description": " ",
+        "image": "",
+        "availability": {
+          "sunday": {
+            "start": "1000",
+            "end": "1600"
+          },
+          "monday": {
+            "start": "1000",
+            "end": "2100"
+          },
+          "tuesday": {
+            "start": "1000",
+            "end": "2100"
+          },
+          "wednesday": {
+            "start": "1000",
+            "end": "1600"
+          },
+          "thursday": {
+            "start": "1000",
+            "end": "1600"
+          },
+          "friday": {
+            "start": "0900",
+            "end": "2100"
+          },
+          "saturday": {
+            "start": "1000",
+            "end": "2100"
           }
         }
       }
@@ -138,124 +174,373 @@
     "Instagram": "Instagram"
   },
   "categories": {
-    "depression": {
-      "name": "Depression",
-      "slidertitle": "Depression",
-      "hero": {
-        "title": "Understanding Depression",
-        "text": "Professional support for depressive disorders...",
-        "image": "../src/assets/depression pic.jpg"
+      "depression": {
+        "name": "Depression",
+        "slidertitle": "Depression",
+        "hero": {
+          "title": "Overcoming Depression",
+          "text": "Effective strategies to manage symptoms and improve quality of life...",
+          "image": "../src/assets/depression.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Persistent sadness, loss of interest, sleep disturbances, fatigue, feelings of worthlessness, and suicidal thoughts."
+          },
+          {
+            "title": "Treatment",
+            "content": "Cognitive Behavioral Therapy (CBT), medication (SSRIs), lifestyle modifications."
+          },
+          {
+            "title": "Support",
+            "content": "Support groups, family counseling, crisis intervention."
+          }
+        ]
       },
-      "info_columns": [
-        {
-          "title": "Symptoms",
-          "content": "Persistent sadness, loss of interest..."
+      "anxiety_disorders": {
+        "name": "Anxiety Disorders",
+        "slidertitle": "Anxiety Disorders",
+        "hero": {
+          "title": "Managing Anxiety",
+          "text": "Practical tools to reduce anxiety and regain control...",
+          "image": "../src/assets/anxiety.png"
         },
-        {
-          "title": "Treatment",
-          "content": "Evidence-based CBT therapies..."
-        },
-        {
-          "title": "Recovery",
-          "content": "Typical improvement within 6-8 weeks..."
-        }
-      ]
-    },
-    "anxiety": {
-      "name": "Anxiety",
-      "slidertitle": "Anxiety",
-      "hero": {
-        "title": "Managing Anxiety",
-        "text": "Effective strategies for anxiety relief...",
-        "image": "../src/assets/anxiety pic.jpg"
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Excessive worry, restlessness, rapid heartbeat, panic attacks, avoidance behavior."
+          },
+          {
+            "title": "Treatment",
+            "content": "Psychotherapy (CBT, exposure therapy), medications (SSRIs, benzodiazepines in severe cases)."
+          },
+          {
+            "title": "Support",
+            "content": "Relaxation techniques, mindfulness training, self-help resources."
+          }
+        ]
       },
-      "info_columns": [
-        {
-          "title": "Symptoms",
-          "content": "Excessive worry, panic attacks..."
+      "bipolar_disorder": {
+        "name": "Bipolar Disorder",
+        "slidertitle": "Bipolar Disorder",
+        "hero": {
+          "title": "Balancing Life with Bipolar Disorder",
+          "text": "Strategies to manage mood swings and achieve stability...",
+          "image": "../src/assets/bipolar.png"
         },
-        {
-          "title": "Treatment",
-          "content": "Mindfulness-based approaches..."
-        },
-        {
-          "title": "Treatment",
-          "content": "Mindfulness-based approaches..."
-        },
-        {
-          "title": "Support",
-          "content": "24/7 crisis support available..."
-        }
-      ]
-    },
-    "addiction": {
-      "name": "Addiction",
-      "slidertitle": "Addiction",
-      "hero": {
-        "title": "Overcoming Addiction",
-        "text": "Comprehensive support for substance and behavioral dependencies...",
-        "image": "../src/assets/addiction pic.png"
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Episodes of mania (high energy, impulsivity) and depression (low mood, fatigue, suicidal thoughts)."
+          },
+          {
+            "title": "Treatment",
+            "content": "Mood stabilizers (lithium, valproate), antipsychotics, psychotherapy."
+          },
+          {
+            "title": "Support",
+            "content": "Family education, adherence to treatment, lifestyle regulation."
+          }
+        ]
       },
-      "info_columns": [
-        {
-          "title": "Patterns",
-          "content": "Compulsive behavior, loss of control..."
+      "schizophrenia": {
+        "name": "Schizophrenia",
+        "slidertitle": "Schizophrenia",
+        "hero": {
+          "title": "Living with Schizophrenia",
+          "text": "Comprehensive care for managing symptoms and improving quality of life...",
+          "image": "../src/assets/schizophrenia.png"
         },
-        {
-          "title": "Treatment",
-          "content": "Behavioral therapies and support groups..."
-        },
-        {
-          "title": "Recovery",
-          "content": "Personalized long-term recovery plans..."
-        }
-      ]
-    },
-    "ocd": {
-      "name": "OCD",
-      "slidertitle": "OCD",
-      "hero": {
-        "title": "Managing OCD",
-        "text": "Specialized care for obsessive-compulsive patterns...",
-        "image": "../src/assets/ocd pic.jpg"
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Hallucinations, delusions, disorganized speech, social withdrawal."
+          },
+          {
+            "title": "Treatment",
+            "content": "Antipsychotic medications, psychosocial rehabilitation."
+          },
+          {
+            "title": "Support",
+            "content": "Vocational training, family therapy, assisted living services."
+          }
+        ]
       },
-      "info_columns": [
-        {
-          "title": "Symptoms",
-          "content": "Intrusive thoughts, repetitive rituals..."
+      "ocd": {
+        "name": "ocd",
+        "slidertitle": "Obsessive-Compulsive Disorder",
+        "hero": {
+          "title": "Breaking Free from OCD",
+          "text": "Effective treatments to reduce obsessive thoughts and compulsive behaviors...",
+          "image": "../src/assets/ocd.png"
         },
-        {
-          "title": "Treatment",
-          "content": "ERP therapy and medication management..."
-        },
-        {
-          "title": "Support",
-          "content": "Strategies to reduce compulsive behaviors..."
-        }
-      ]
-    },
-    "adhd": {
-      "name": "ADHD",
-      "slidertitle": "ADHD",
-      "hero": {
-        "title": "Thriving with ADHD",
-        "text": "Tailored strategies for focus and emotional regulation...",
-        "image": "../src/assets/adhd pic.png"
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Intrusive obsessive thoughts, compulsive rituals, distress, time-consuming behaviors."
+          },
+          {
+            "title": "Treatment",
+            "content": "Exposure and Response Prevention (ERP), SSRIs."
+          },
+          {
+            "title": "Support",
+            "content": "Support groups, behavioral coaching, mindfulness techniques."
+          }
+        ]
       },
-      "info_columns": [
-        {
-          "title": "Symptoms",
-          "content": "Inattention, hyperactivity, impulsivity..."
+      "ptsd": {
+        "name": "ptsd",
+        "slidertitle": "Post Traumatic Stress Disorder",
+        "hero": {
+          "title": "Healing from Post Traumatic Stress Disorder",
+          "text": "Pathways to recovery and emotional well-being...",
+          "image": "../src/assets/ptsd.png"
         },
-        {
-          "title": "Treatment",
-          "content": "Behavioral interventions and medication..."
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Flashbacks, nightmares, hypervigilance, emotional numbing."
+          },
+          {
+            "title": "Treatment",
+            "content": "Trauma-focused CBT, Eye Movement Desensitization and Reprocessing (EMDR), SSRIs."
+          },
+          {
+            "title": "Support",
+            "content": "Peer support groups, relaxation therapy, coping skills training."
+          }
+        ]
+      },
+      "eating_disorders": {
+        "name": "Eating Disorders",
+        "slidertitle": "Eating Disorders",
+        "hero": {
+          "title": "Recovering from Eating Disorders",
+          "text": "Holistic approaches to restore health and self-esteem...",
+          "image": "../src/assets/eating_disorders.png"
         },
-        {
-          "title": "Support",
-          "content": "Tools for organization and time management..."
-        }
-      ]
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Distorted body image, excessive dieting, binge eating, purging."
+          },
+          {
+            "title": "Treatment",
+            "content": "Nutritional counseling, CBT, SSRIs for co-existing depression."
+          },
+          {
+            "title": "Support",
+            "content": "Family-based therapy, meal planning support, community programs."
+          }
+        ]
+      },
+      "adhd": {
+        "name": "ADHD",
+        "slidertitle": "ADHD",
+        "hero": {
+          "title": "Thriving with ADHD",
+          "text": "Tailored strategies for focus and emotional regulation...",
+          "image": "../src/assets/adhd.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Inattention, hyperactivity, impulsivity, poor academic or work performance."
+          },
+          {
+            "title": "Treatment",
+            "content": "Stimulant medications (methylphenidate, amphetamines), behavioral therapy."
+          },
+          {
+            "title": "Support",
+            "content": "Classroom accommodations, parental training, executive function coaching."
+          }
+        ]
+      },
+      "dementia": {
+        "name": "Dementia",
+        "slidertitle": "Dementia",
+        "hero": {
+          "title": "Caring for Dementia",
+          "text": "Support and strategies for patients and caregivers...",
+          "image": "../src/assets/dementia.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Memory loss, confusion, disorientation, personality changes, impaired judgment."
+          },
+          {
+            "title": "Treatment",
+            "content": "Cognitive enhancers (donepezil, memantine), behavioral interventions."
+          },
+          {
+            "title": "Support",
+            "content": "Caregiver education, memory aids, structured routines, respite care."
+          }
+        ]
+      },
+      "addiction_services": {
+        "name": "Addiction Services",
+        "slidertitle": "Addiction Services",
+        "hero": {
+          "title": "Overcoming Addiction",
+          "text": "Pathways to recovery and long-term sobriety...",
+          "image": "../src/assets/addiction.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Craving, loss of control over substance use, withdrawal symptoms, neglect of responsibilities."
+          },
+          {
+            "title": "Treatment",
+            "content": "Detoxification, medication-assisted treatment (methadone, naltrexone), CBT."
+          },
+          {
+            "title": "Support",
+            "content": "12-step programs, group therapy, relapse prevention strategies."
+          }
+        ]
+      },
+      "panic_disorder": {
+        "name": "Panic Disorder",
+        "slidertitle": "Panic Disorder",
+        "hero": {
+          "title": "Managing Panic Attacks",
+          "text": "Tools to reduce panic and regain control...",
+          "image": "../src/assets/panic_disorder.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Sudden intense fear, palpitations, dizziness, sweating, sense of impending doom."
+          },
+          {
+            "title": "Treatment",
+            "content": "CBT, SSRIs, benzodiazepines for acute episodes."
+          },
+          {
+            "title": "Support",
+            "content": "Breathing exercises, stress management, lifestyle adjustments."
+          }
+        ]
+      },
+      "autism_spectrum_disorder": {
+        "name": "autism_spectrum_disorder",
+        "slidertitle": "Autism Spectrum Disorder",
+        "hero": {
+          "title": "Supporting Individuals with ASD",
+          "text": "Comprehensive care for communication and social skills...",
+          "image": "../src/assets/autism.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Impaired social interaction, repetitive behaviors, communication difficulties."
+          },
+          {
+            "title": "Treatment",
+            "content": "Behavioral therapy (ABA), speech therapy, educational interventions."
+          },
+          {
+            "title": "Support",
+            "content": "Parental training, social skills groups, special education services."
+          }
+        ]
+      },
+      "personality_disorders": {
+        "name": "Personality Disorders",
+        "slidertitle": "Personality Disorders",
+        "hero": {
+          "title": "Managing Personality Disorders",
+          "text": "Strategies for emotional regulation and improved relationships...",
+          "image": "../src/assets/personality_disorders.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Unstable relationships, impulsive behaviors, emotional dysregulation."
+          },
+          {
+            "title": "Treatment",
+            "content": "Dialectical Behavior Therapy (DBT), schema therapy, mood stabilizers."
+          },
+          {
+            "title": "Support",
+            "content": "Long-term psychotherapy, structured environments, group therapy."
+          }
+        ]
+      },
+      "conduct_disorder": {
+        "name": "Conduct Disorder",
+        "slidertitle": "Conduct Disorder",
+        "hero": {
+          "title": "Addressing Conduct Disorder",
+          "text": "Interventions to improve behavior and social functioning...",
+          "image": "../src/assets/conduct_disorder.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Aggressive behavior, rule-breaking, deceitfulness, lack of empathy."
+          },
+          {
+            "title": "Treatment",
+            "content": "Behavioral therapy, parent management training, social skills training."
+          },
+          {
+            "title": "Support",
+            "content": "School interventions, mentoring programs, family counseling."
+          }
+        ]
+      },
+      "marital_counseling": {
+        "name": "Marital Counseling",
+        "slidertitle": "Marital Counseling",
+        "hero": {
+          "title": "Strengthening Relationships",
+          "text": "Tools for better communication and conflict resolution...",
+          "image": "../src/assets/marital_counseling.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Communication breakdown, emotional detachment, frequent conflicts."
+          },
+          {
+            "title": "Treatment",
+            "content": "Couples therapy, conflict resolution training, behavioral techniques."
+          },
+          {
+            "title": "Support",
+            "content": "Marriage workshops, relationship coaching, supportive therapy groups."
+          }
+        ]
+      },
+      "sexual_disorders": {
+        "name": "Sexual Disorders",
+        "slidertitle": "Sexual Disorders",
+        "hero": {
+          "title": "Addressing Sexual Health",
+          "text": "Comprehensive care for sexual well-being...",
+          "image": "../src/assets/sexual_disorders.png"
+        },
+        "info_columns": [
+          {
+            "title": "Symptoms",
+            "content": "Lack of sexual desire, erectile dysfunction, premature ejaculation, sexual aversion."
+          },
+          {
+            "title": "Treatment",
+            "content": "Sex therapy, hormonal treatments, psychological interventions."
+          },
+          {
+            "title": "Support",
+            "content": "Couples counseling, educational programs, stress management techniques."
+          }
+        ]
+      }
     }
-  }
 }

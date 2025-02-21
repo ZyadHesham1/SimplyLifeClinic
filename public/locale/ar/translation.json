@@ -163,7 +163,7 @@
       ]
     },
     "anxiety": {
-      "name": "القلق",
+      "name": "anxiety",
       "slidertitle": "القلق",
       "hero": {
         "title": "إدارة القلق",
@@ -186,7 +186,7 @@
       ]
     },
     "addiction": {
-      "name": "الإدمان",
+      "name": "addiction",
       "slidertitle": "الإدمان",
       "hero": {
         "title": "التغلب على الإدمان",

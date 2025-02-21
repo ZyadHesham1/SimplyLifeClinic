@@ -19,12 +19,12 @@ const localizer = dateFnsLocalizer({
 const minTime = new Date();
 minTime.setHours(9, 0, 0);
 const maxTime = new Date();
-maxTime.setHours(21, 0, 0);
+maxTime.setHours(22, 0, 0);
 
 const DoctorCalendar = () => {
   const { t } = useTranslation();  // Get translation function
   const [doctors, setDoctors] = useState([]);
-  const [selectedDoctor, setSelectedDoctor] = useState("");
+  const [selectedDoctor, setSelectedDoctor] = useState("Appointment");
 
   // Load doctors from i18n JSON when language changes
   useEffect(() => {
@@ -42,9 +42,11 @@ const DoctorCalendar = () => {
     ? events.filter((event) => event.resource.doctorName.toLowerCase() === selectedDoctor.toLowerCase())
     : events;
 
+
   return (
-    <div style={{ height: "800px", padding: "20px" }}>
+    <div style={{ height: "500px", padding: "20px" }}>
       {/* Doctor Selection Dropdown */}
+
       <select
         onChange={(e) => {
           console.log("Selected Doctor:", e.target.value); // Debugging
@@ -52,7 +54,8 @@ const DoctorCalendar = () => {
         }}
         style={{ marginBottom: "10px", padding: "5px", fontSize: "1em" }}
       >
-        <option value="">All Doctors</option>
+        <option value="appointment">Appointment</option> {/* Default option */}
+        {/* <option value="">All Doctors</option> */}
         {doctors?.map((doc) => (
           <option key={doc.name} value={doc.name}>
             {doc.name}
@@ -66,8 +69,8 @@ const DoctorCalendar = () => {
         events={filteredEvents}
         startAccessor="start"
         endAccessor="end"
-        defaultView="week"
-        views={["week", "day"]}
+        defaultView="month"
+        views={["month","week", "day"]}
         min={minTime}
         max={maxTime}
         step={30}

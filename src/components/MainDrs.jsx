@@ -31,7 +31,7 @@ const MainDrs = () => {
 
         {/* Doctors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {doctors.map((doctor, index) => (
+          {doctors.slice(0, 3).map((doctor, index) => (
             <DrCard
               key={index}
               name={doctor.name}
