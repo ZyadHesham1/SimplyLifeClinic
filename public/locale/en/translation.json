@@ -1,61 +1,74 @@
 {
-  "title": "Simply Life",
+  "title": "Simply",
   "navbar": {
     "home": "Home",
     "test": "Online Tests",
     "appointment": "Make Appointment",
     "logo_alt": "Logo",
-    "title": "Simply Life"
+    "title": "Simply For Psychological Balance & Behavioral Rehabilitation"
   },
   "hero": {
     "title": "Your Mental Health Matters",
     "subtitle": "Hand in hand, support you, we understand you, and help you for a balanced psychological life.",
-    "list_item_1": "Personalized treatment plans",
-    "list_item_2": "Experienced and compassionate therapists",
-    "list_item_3": "Confidential and secure sessions",
+    "list_item_1": "Resources that help you improve your mental health",
+    "list_item_2": "Comprehensive personal support for every family member, tailored to all ages and life circumstances.",
+    "list_item_3": "Providing effective solutions for addressing psychological challenges",
     "cta_primary": "Book Consultation",
+    "paragragh": "Simply is your companion on the journey of self-care, offering you tools and resources to enhance your mental well-being, overcome stress, and manage daily pressures effectively.",
     "image_alt": "Happy person discussing with professional therapist"
   },
   "message_section": {
     "title": "Our Core Values",
     "columns": [
       {
-        "title": "Compassionate Care",
-        "text": "Empathetic support tailored to individual needs"
+        "title": "Our Message",
+        "text": "Providing psychological support and appropriate therapy for all family members, regardless of their ages or circumstances."
       },
       {
-        "title": "Professional Excellence",
-        "text": "Licensed practitioners with proven expertise"
+        "title": "Our Goal",
+        "text": "We support you and your family in achieving balanced mental well-being, fostering a loving, understanding, and comfortable environment for all."
       },
       {
-        "title": "Confidentiality",
-        "text": "Secure and private therapy sessions"
+        "title": "Inclusive Inviroment",
+        "text": "Our clinic is an inclusive space, welcoming individuals from all backgrounds and financial circumstances, ensuring accessible care for everyone."
       },
       {
-        "title": "Accessibility",
-        "text": "Available services for all backgrounds"
+        "title": "Out Commitment",
+        "text": "We are a team of doctors and mental health specialists committed to providing the best psychological care, grounded in three core values: science, complete confidentiality, and quality."
       },
       {
-        "title": "Holistic Approach",
-        "text": "Integrated mind-body wellness strategies"
+        "title": "Complete Experience",
+        "text": "We offer direct a direct connection with professtional rehab centers and immediate follow-ups"
       }
     ]
   },
   "commitment_section": {
-    "title": "Our Core Values",
-    "columns": [
-      {
-        "title": "Compassionate Care",
-        "text": "Empathetic support tailored to individual needs"
-      },
-      {
-        "title": "Professional Excellence",
-        "text": "Licensed practitioners with proven expertise"
-      },
-      {
-        "title": "Confidentiality",
-        "text": "Secure and private therapy sessions"
-      }
+    "title": "Our Services",
+    "columns": [  
+      {  
+        "title": "Psychiatric Assistance",  
+        "text": "Professional psychiatric care customized to your needs"  
+      },  
+      {  
+        "title": "Personal Mental Health",  
+        "text": "Personalized strategies for mental wellness"  
+      },  
+      {  
+        "title": "Addiction Services",  
+        "text": "Comprehensive addiction recovery programs"  
+      },  
+      {  
+        "title": "Elderly Mental Health",  
+        "text": "Specialized mental health care for seniors"  
+      },  
+      {  
+        "title": "Psychiatric Assessments",  
+        "text": "Thorough diagnostic evaluations and reports"  
+      },  
+      {  
+        "title": "Special Needs Care",  
+        "text": "Tailored support for individuals with special needs"  
+      }  
     ]
   },
   "doctors": {
@@ -63,8 +76,8 @@
     "list": [
       {
         "name": "Dr. Amira Youssef",
-        "title": "Clinical Psychologist",
-        "description": "Specializing in cognitive behavioral therapy with 10+ years of experience",
+        "title": "Professor of Psychiatry and Addiction Treatment",
+        "description": "Member of the Egyptian Psychiatric Association",
         "availability": {
           "monday": {
             "start": "0800",
@@ -80,8 +93,7 @@
           }
         },
         "categories": [
-          "adhd",
-          "ocd"
+          
         ],
         "image": "/src/assets/headshots/amira.jpeg"
       },
@@ -162,7 +174,7 @@
   "Resources": "Resources",
   "Follow us": "Follow us",
   "Legal": "Legal",
-  "Simply Life": "Simply Life",
+  "simply": "Simply",
   "Facebook": "Facebook",
   "Instagram": "Instagram",
   "Privacy Policy": "Privacy Policy",
@@ -180,7 +192,7 @@
         "hero": {
           "title": "Overcoming Depression",
           "text": "Effective strategies to manage symptoms and improve quality of life...",
-          "image": "../src/assets/depression.png"
+          "image": "../src/assets/depression.jpg"
         },
         "info_columns": [
           {
@@ -203,7 +215,7 @@
         "hero": {
           "title": "Managing Anxiety",
           "text": "Practical tools to reduce anxiety and regain control...",
-          "image": "../src/assets/anxiety.png"
+          "image": "../src/assets/anxiety.jpg"
         },
         "info_columns": [
           {
@@ -226,7 +238,7 @@
         "hero": {
           "title": "Balancing Life with Bipolar Disorder",
           "text": "Strategies to manage mood swings and achieve stability...",
-          "image": "../src/assets/bipolar.png"
+          "image": "../src/assets/bipolar.webp"
         },
         "info_columns": [
           {
@@ -249,7 +261,7 @@
         "hero": {
           "title": "Living with Schizophrenia",
           "text": "Comprehensive care for managing symptoms and improving quality of life...",
-          "image": "../src/assets/schizophrenia.png"
+          "image": "../src/assets/schizo.jpg"
         },
         "info_columns": [
           {
@@ -268,11 +280,11 @@
       },
       "ocd": {
         "name": "ocd",
-        "slidertitle": "Obsessive-Compulsive Disorder",
+        "slidertitle": "OCD",
         "hero": {
           "title": "Breaking Free from OCD",
           "text": "Effective treatments to reduce obsessive thoughts and compulsive behaviors...",
-          "image": "../src/assets/ocd.png"
+          "image": "../src/assets/ocd.jpg"
         },
         "info_columns": [
           {
@@ -291,7 +303,7 @@
       },
       "ptsd": {
         "name": "ptsd",
-        "slidertitle": "Post Traumatic Stress Disorder",
+        "slidertitle": "PTSD",
         "hero": {
           "title": "Healing from Post Traumatic Stress Disorder",
           "text": "Pathways to recovery and emotional well-being...",
@@ -318,7 +330,7 @@
         "hero": {
           "title": "Recovering from Eating Disorders",
           "text": "Holistic approaches to restore health and self-esteem...",
-          "image": "../src/assets/eating_disorders.png"
+          "image": "../src/assets/eating.jpg"
         },
         "info_columns": [
           {
@@ -381,8 +393,8 @@
           }
         ]
       },
-      "addiction_services": {
-        "name": "Addiction Services",
+      "addiction": {
+        "name": "Addiction",
         "slidertitle": "Addiction Services",
         "hero": {
           "title": "Overcoming Addiction",
@@ -410,7 +422,7 @@
         "hero": {
           "title": "Managing Panic Attacks",
           "text": "Tools to reduce panic and regain control...",
-          "image": "../src/assets/panic_disorder.png"
+          "image": "../src/assets/panic-disorder.webp"
         },
         "info_columns": [
           {
@@ -429,11 +441,11 @@
       },
       "autism_spectrum_disorder": {
         "name": "autism_spectrum_disorder",
-        "slidertitle": "Autism Spectrum Disorder",
+        "slidertitle": "Autism Disorder",
         "hero": {
           "title": "Supporting Individuals with ASD",
           "text": "Comprehensive care for communication and social skills...",
-          "image": "../src/assets/autism.png"
+          "image": "../src/assets/autism.jpeg"
         },
         "info_columns": [
           {
@@ -456,7 +468,7 @@
         "hero": {
           "title": "Managing Personality Disorders",
           "text": "Strategies for emotional regulation and improved relationships...",
-          "image": "../src/assets/personality_disorders.png"
+          "image": "../src/assets/personality_disorder.jpg"
         },
         "info_columns": [
           {
@@ -479,7 +491,7 @@
         "hero": {
           "title": "Addressing Conduct Disorder",
           "text": "Interventions to improve behavior and social functioning...",
-          "image": "../src/assets/conduct_disorder.png"
+          "image": "../src/assets/Conduct-Disorder.jpg"
         },
         "info_columns": [
           {
@@ -502,7 +514,7 @@
         "hero": {
           "title": "Strengthening Relationships",
           "text": "Tools for better communication and conflict resolution...",
-          "image": "../src/assets/marital_counseling.png"
+          "image": "../src/assets/marital.webp"
         },
         "info_columns": [
           {
@@ -525,7 +537,7 @@
         "hero": {
           "title": "Addressing Sexual Health",
           "text": "Comprehensive care for sexual well-being...",
-          "image": "../src/assets/sexual_disorders.png"
+          "image": "../src/assets/sexual_disorder.jpg"
         },
         "info_columns": [
           {

@@ -10,12 +10,13 @@ import NotFoundPage from './pages/NotFoundPage';
 import SingleCategoryPage from "./pages/categories/CategoryPage"; 
 import AdminForm from './pages/categories/AdminForm';
 import Cookies from 'js-cookie';
-import { useEffect } from 'react';
+import { useEffect, React } from 'react';
 import i18n from './i18n';
 import { useTranslation } from 'react-i18next';
 import DoctorCalendar from './components/DoctorCalendar';
 
-
+import { WhatsAppWidget } from 'react-whatsapp-widget';
+import 'react-whatsapp-widget/dist/index.css';
 
 
 // import Testing from "./pages/Testing"
@@ -44,6 +45,7 @@ const App = () => {
 
 return (<>
 <RouterProvider router={router} />
+<WhatsAppWidget phoneNumber="+20155840696" />
 
 
 </>

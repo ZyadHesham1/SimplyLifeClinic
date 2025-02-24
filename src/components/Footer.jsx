@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo.jpeg"; // Import the logo correctly
+import logo from "../assets/logo.jpeg";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const [hideFooter, setHideFooter] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    // If "app=true" is in the URL, hide the footer.
+    if (params.get("app") === "true") {
+      setHideFooter(true);
+    }
+  }, []);
+
+  if (hideFooter) return null; // Do not render footer if in WebView
 
   return (
     <footer className="bg-white">
@@ -15,7 +26,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center">
               <img src={logo} className="h-8 mr-3" alt="Simply Life Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap">
-                Simply Life
+              {t("simply")}
               </span>
             </Link>
           </div>
@@ -29,14 +40,14 @@ const Footer = () => {
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <Link to="/" className="hover:underline">
-                    Simply Life
+                    {t("simply")}
                   </Link>
                 </li>
-                <li>
-                  <a href="#" className="hover:underline">
+                {/* <li>
+                  <a href="https://www.facebook.com/profile.php?id=61573108233835" className="hover:underline">
                   {t("Facebook")}
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -46,19 +57,19 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="https://www.facebook.com/profile.php?id=61573108233835" className="hover:underline">
                   {t("Facebook")}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="https://www.instagram.com/simply.life.mental.health" className="hover:underline">
                   {t("Instagram")}
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 {t("Legal")}
               </h2>
@@ -74,7 +85,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -86,12 +97,12 @@ const Footer = () => {
           <span className="text-sm text-gray-500 sm:text-center">
             © 2025{" "}
             <a href="#" className="hover:underline">
-              Simply Life
+            {t("simply")}
             </a>
             . {t("All Rights Reserved")}.
           </span>
 
-          {/* Social Media Icons */}
+          {/* Social Media Icons
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             {[
               { href: "#", icon: "facebook", sr: "Facebook page" },
@@ -108,7 +119,7 @@ const Footer = () => {
                 <i className={`fab fa-${social.icon} text-xl`}></i>
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

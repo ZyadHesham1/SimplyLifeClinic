@@ -6,8 +6,6 @@ import Cookies from 'js-cookie';
 import i18n from '../i18n';
 import { useTranslation } from 'react-i18next';
 
-
-
 const MainLayout = () => {
   const {t} = useTranslation();
       

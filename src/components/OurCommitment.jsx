@@ -6,7 +6,7 @@ const OurMessage = () => {
   const columns = t('commitment_section.columns', { returnObjects: true });
 
   return (
-    <section className="w-full bg-amber-50 py-16">
+    <section className="w-full bg-linear-to-b from-amber-50 to-gray-50 py-16">
       <div className="mx-auto w-full max-w-screen-xl px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
           {t('commitment_section.title')}

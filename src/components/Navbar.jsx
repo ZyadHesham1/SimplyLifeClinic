@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import logo from '../../zyad/navlogo.png';
+import logo from '../assets/logo-removebg.png';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import LanguageSwitch from './LanguageSwitch';
@@ -30,120 +30,61 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`
-      sticky top-0 z-50 shadow-md
-      bg-[var(--color-text)]
-      flex ${isRTL ? 'flex-row-reverse' : 'flex-row'}
-      justify-between items-center px-6 py-2
-      `}>
-      {/* Logo */}
-      <Link 
-        to="/" 
-        className="flex items-center gap-2 hover:opacity-80 transition-opacity z-20"
-      >
-        <img 
-          src={logo}
-          alt={t("navbar.logo_alt")} 
-          className="h-8 w-8" 
-        />
-      </Link>
+    <nav className="sticky top-0 z-50 shadow-md bg-[var(--color-text)] flex items-center px-6 py-2">
+      {/* Left: Logo */}
+      <div className="flex-1 flex items-center justify-start">
+        <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img src={logo} alt={t("navbar.logo_alt")} className="h-8 w-8" />
+        </Link>
+      </div>
 
-      {/* Title - Always Centered */}
-      <div className="absolute inset-x-0 flex justify-center z-10">
+      {/* Center: Title */}
+      <div className="flex-1 flex items-center justify-center">
         <h1 className="text-xl font-bold whitespace-nowrap text-[var(--color-background)]">
           {t("navbar.title")}
         </h1>
       </div>
 
-
-      {/* Desktop Navigation */}
-      <div className={`
-        hidden lg:flex ${isRTL ? 'flex-row-reverse' : 'flex-row'} gap-2
-      `}>
-        {navigation.map((item) => (
+      {/* Right: Navigation and Language Switch */}
+      <div className="flex-1 flex items-center justify-end">
+        <div className="hidden lg:flex items-center gap-2">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              to={item.to}
+              className="px-4 py-2 rounded-md transition-all duration-200 text-[var(--color-background)] hover:text-[var(--color-background)] hover:bg-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-50"
+            >
+              {item.name}
+            </Link>
+          ))}
           <Link
-            key={item.name}
-            to={item.to}
-            className={`
-              px-4 py-2 rounded-md transition-all duration-200
-              text-[var(--color-background)] hover:text-[var(--color-background)]
-              hover:bg-[var(--color-accent)]
-              focus:outline-none focus:ring-2
-              focus:ring-[var(--color-primary)] focus:ring-opacity-50
-            `}
+            onClick={(e) => {
+              e.preventDefault();
+              const newLang = i18n.language === "en" ? "ar" : "en";
+              i18n.changeLanguage(newLang);
+            }}
+            to="#"
+            className="px-4 py-2 rounded-md transition-all duration-200 cursor-pointer text-[var(--color-background)] hover:text-[var(--color-background)] hover:bg-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-50"
           >
-            {item.name}
+            {i18n.language === "en" ? "العربية" : "English"}
           </Link>
-          
-        ))}
-        <div className="hidden lg:flex items-center gap-4 relative z-50">
-          <LanguageSwitch />
         </div>
-
-      </div>
-      
-
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden z-20">
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`
-            p-2 rounded-md
-            text-[var(--color-text)] hover:text-[var(--color-dark)]
-            focus:outline-none bg-[var(--color-accent)]
-          `}
-        >
-          {isMobileMenuOpen ? (
-            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-          ) : (
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu Transition */}
-      <Transition
-        show={isMobileMenuOpen}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        {(ref) => (
-          <div
-            ref={ref}
-            className={`
-              absolute top-0 ${isRTL ? 'left-0' : 'right-0'} w-full
-              bg-[var(--color-dark)] lg:hidden shadow-lg z-10
-              pt-16 pb-4
-            `}
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-md text-[var(--color-text)] hover:text-[var(--color-dark)] focus:outline-none bg-[var(--color-accent)]"
           >
-            <div className="px-4 pt-2 space-y-2">
-            <LanguageSwitch />
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`
-                    block px-4 py-3 rounded-md transition-all duration-200
-                   text-[var(--color-background)] hover:text-[var(--color-background)]
-                    hover:bg-[var(--color-accent)]
-                    focus:outline-none focus:ring-2
-                    focus:ring-[var(--color-primary)] focus:ring-opacity-50
-                  `}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-      </Transition>
-      
+            {isMobileMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+      </div>
     </nav>
+
   );
 };
 

@@ -19,7 +19,7 @@ const CatSlider = ({ titleKey, link }) => {
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 5000, // Delay between slides
+    autoplaySpeed: 2000, // Delay between slides
     cssEase: 'cubic-bezier(.21,.91,.08,.95)', // Smooth linear transition
     // cssEase: 'cubic-bezier(0,1.14,0,.85)', // Smooth linear transition
     rtl: isRTL, // Enable RTL mode if needed
@@ -43,7 +43,7 @@ const CatSlider = ({ titleKey, link }) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],

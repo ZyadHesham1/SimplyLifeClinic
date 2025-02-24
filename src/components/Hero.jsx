@@ -39,11 +39,14 @@ const Hero = () => {
                 <span className="text-gray-700">{t('hero.list_item_3')}</span>
               </li>
             </ul>
+            <p className="text-lg md:text-xl text-gray-600 rtl:text-right">
+              {t('hero.paragragh')}
+            </p>
 
             {/* Call-to-Action Buttons */}
             <div className="inline flex-col md:flex-row gap-4 justify-center md:justify-start bg-[var(--color-cream)] rounded-2xl p-2">
               <Link
-                to="/appointments"
+                to="/calendar"
                 className="bg-primary text-black px-8 py-3 rounded-lg hover:bg-primary-dark transition-colors duration-300"
               >
                 {t('hero.cta_primary')}
