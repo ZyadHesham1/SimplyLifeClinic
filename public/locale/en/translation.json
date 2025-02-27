@@ -15,7 +15,7 @@
     "list_item_3": "Providing effective solutions for addressing psychological challenges",
     "cta_primary": "Book Consultation",
     "paragragh": "Simply is your companion on the journey of self-care, offering you tools and resources to enhance your mental well-being, overcome stress, and manage daily pressures effectively.",
-    "paragraph2": "We are here to help you through specialized treatment programs, professional psychological consultations, and modern, science-based techniques, ensuring an experience that makes a real difference in your life.",
+    "paragragh2": "We are here to help you through specialized treatment programs, professional psychological consultations, and modern, science-based techniques, ensuring an experience that makes a real difference in your life.",
     "image_alt": "Happy person discussing with professional therapist"
   },
   "message_section": {
@@ -45,31 +45,31 @@
   },
   "commitment_section": {
     "title": "Our Services",
-    "columns": [  
-      {  
-        "title": "Psychiatric Assistance",  
-        "text": "Professional psychiatric care customized to your needs"  
-      },  
-      {  
-        "title": "Personal Mental Health",  
-        "text": "Personalized strategies for mental wellness"  
-      },  
-      {  
-        "title": "Addiction Services",  
-        "text": "Comprehensive addiction recovery programs"  
-      },  
-      {  
-        "title": "Elderly Mental Health",  
-        "text": "Specialized mental health care for seniors"  
-      },  
-      {  
-        "title": "Psychiatric Assessments",  
-        "text": "Thorough diagnostic evaluations and reports"  
-      },  
-      {  
-        "title": "Special Needs Care",  
-        "text": "Tailored support for individuals with special needs"  
-      }  
+    "columns": [
+      {
+        "title": "Psychiatric Assistance",
+        "text": "Professional psychiatric care customized to your needs"
+      },
+      {
+        "title": "Personal Mental Health",
+        "text": "Personalized strategies for mental wellness"
+      },
+      {
+        "title": "Addiction Services",
+        "text": "Comprehensive addiction recovery programs"
+      },
+      {
+        "title": "Elderly Mental Health",
+        "text": "Specialized mental health care for seniors"
+      },
+      {
+        "title": "Psychiatric Assessments",
+        "text": "Thorough diagnostic evaluations and reports"
+      },
+      {
+        "title": "Special Needs Care",
+        "text": "Tailored support for individuals with special needs"
+      }
     ]
   },
   "doctors": {
@@ -93,9 +93,7 @@
             "end": "1400"
           }
         },
-        "categories": [
-          
-        ],
+        "categories": [],
         "image": "/src/assets/headshots/amira.jpeg"
       },
       {
@@ -187,262 +185,262 @@
     "Instagram": "Instagram"
   },
   "categories": {
-      "childhood_psychiatric": {
-        "name": "Childhood Psychiatric",
-        "slidertitle": "Childhood Psychiatric Disorders",
-        "motive": "Supporting children's emotional and behavioral development.",
-        "hero": {
-          "title": "Helping Children Thrive",
-          "text": "Children can face emotional and behavioral challenges that impact their development. Disorders like ADHD, autism spectrum disorder, and childhood anxiety can affect learning, socialization, and emotions.",
-          "image": "../src/assets/child.jpg"
-        },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Emotional and behavioral challenges, learning difficulties, socialization issues."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Early diagnosis, behavioral therapy, structured routines, parental guidance, social skills training, family involvement, and school collaboration."
-          }
-        ]
+    "childhood_psychiatric": {
+      "name": "Childhood Psychiatric",
+      "slidertitle": "Childhood Psychiatric Disorders",
+      "motive": "Supporting children's emotional and behavioral development.",
+      "hero": {
+        "title": "Helping Children Thrive",
+        "text": "Children can face emotional and behavioral challenges that impact their development. Disorders like ADHD, autism spectrum disorder, and childhood anxiety can affect learning, socialization, and emotions.",
+        "image": "../src/assets/child.jpg"
       },
-      "anxiety_disorders": {
-        "name": "Anxiety Disorders",
-        "slidertitle": "Anxiety Disorders",
-        "motive": "Regain control and confidence.",
-        "hero": {
-          "title": "Managing Anxiety",
-          "text": "Excessive worry, fear, and panic attacks can disrupt daily life. Anxiety disorders include generalized anxiety disorder, social anxiety, phobias, and panic disorder.",
-          "image": "../src/assets/anxiety.jpg"
-        },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Excessive worry, restlessness, rapid heartbeat, panic attacks, avoidance behavior."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Cognitive-behavioral therapy (CBT), relaxation techniques, mindfulness, gradual exposure therapy, medications (if needed), and support groups."
-          }
-        ]
-      },
-      "sexual_disorders": {
-        "name": "Sexual Disorders",
-        "slidertitle": "Sexual Disorders",
-        "motive": "Ensuring a healthy and fulfilling sex life.",
-        "hero": {
-          "title": "Addressing Sexual Health",
-          "text": "Sexual dysfunctions (e.g., low desire, erectile dysfunction) and paraphilic disorders (unconventional sexual interests causing distress) can affect relationships and well-being.",
-          "image": "../src/assets/sexual_disorder.jpg"
-        },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Low sexual desire, erectile dysfunction, unconventional sexual interests causing distress."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Compassionate therapy, sex counseling, medication (if required), addressing underlying psychological issues, and partner involvement."
-          }
-        ]
-      },
-      "psychotic_disorders": {
-        "name": "Psychotic Disorders",
-        "slidertitle": "Psychotic Disorders",
-        "motive": "Helping individuals maintain stability and lead fulfilling lives.",
-        "hero": {
-          "title": "Living with Psychotic Disorders",
-          "text": "Conditions like schizophrenia and schizoaffective disorder cause hallucinations, delusions, and disorganized thinking.",
-          "image": "../src/assets/psychotic.jpg"
-        },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Hallucinations, delusions, disorganized thinking, social withdrawal."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Antipsychotic medications, psychotherapy, family support, social rehabilitation, and crisis intervention."
-          }
-        ]
-      },
-      "mood_disorders": {
-        "name": "Mood Disorders",
-        "slidertitle": "Mood Disorders",
-        "motive": "Achieving long-term stability.",
-        "hero": {
-          "title": "Managing Mood Disorders",
-          "text": "Depression drains energy, while bipolar disorder causes mood swings between extreme highs and lows.",
-          "image": "../src/assets/mood-disorder.webp"
-        },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Persistent sadness, loss of interest, mood swings, fatigue, feelings of worthlessness."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Personalized treatment including therapy (CBT, interpersonal therapy), mood stabilizers, antidepressants, lifestyle changes, and emotional support from loved ones."
-          }
-        ]
-      },
-      "addiction_disorders": {
-        "name": "Addiction Disorders",
-        "slidertitle": "Addiction Disorders",
-        "motive": "Regaining control and building a fulfilling life.",
-        "hero": {
-          "title": "Overcoming Addiction",
-          "text": "Substance addictions (alcohol, drugs) and behavioral addictions (gambling, gaming, internet) hijack the brain’s reward system.",
-          "image": "../src/assets/addiction.jpeg"
-        },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Craving, loss of control over substance use, withdrawal symptoms, neglect of responsibilities."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Detox programs, rehabilitation, cognitive therapy, support groups (AA, NA), family therapy, and relapse prevention strategies."
-          }
-        ],
-        "gallery": {
-        "title": "Our Rehab Centers",
-        "images": [
+      "info_columns": [
         {
-          "src": "../src/assets/center/enterance.jpeg",
-          "alt": "enterance picture"
+          "title": "Symptoms",
+          "content": "Emotional and behavioral challenges, learning difficulties, socialization issues."
         },
         {
-          "src": "../src/assets/center/enterance2.jpeg",
-          "alt": "picutre of enterance 2"
-        },
-        {
-          "src": "../src/assets/center/desk.jpeg",
-          "alt": "صورة دعم القلق 1"
-        },
-        {
-          "src": "../src/assets/center/bedroom1.jpeg",
-          "alt": "صورة دعم القلق 2"
-        },
-        {
-          "src": "../src/assets/center/bedroom2.jpeg",
-          "alt": "صورة دعم القلق 3"
-        },
-        {
-          "src": "../src/assets/center/bedroomdouble.jpeg",
-          "alt": "صورة دعم القلق 1"
-        },
-        {
-          "src": "../src/assets/center/circle.jpeg",
-          "alt": "صورة دعم القلق 1"
-        },
-        {
-          "src": "../src/assets/center/living.jpeg",
-          "alt": ""
-        },
-        {
-          "src": "../src/assets/center/view.jpeg",
-          "alt": ""
+          "title": "Support Strategy",
+          "content": "Early diagnosis, behavioral therapy, structured routines, parental guidance, social skills training, family involvement, and school collaboration."
         }
       ]
-    }
     },
-      "psychotherapy_services": {
-        "name": "Psychotherapy Services",
-        "slidertitle": "Psychotherapy Services",
-        "motive": "Tailored therapy for lasting change.",
-        "hero": {
-          "title": "Understanding Psychotherapy",
-          "text": "Psychotherapy helps individuals understand their thoughts, emotions, and behaviors, leading to lasting change. Different approaches cater to unique needs.",
-          "image": "../src/assets/psychotherapy.jpeg"
-        },
-        "info_columns": [
-          {
-            "title": "Cognitive-Behavioral Therapy (CBT)",
-            "content": "Restructures negative thought patterns to improve emotional well-being."
-          },
-          {
-            "title": "Dialectical Behavior Therapy (DBT)",
-            "content": "Helps manage intense emotions, especially in personality disorders."
-          },
-          {
-            "title": "Psychodynamic Therapy",
-            "content": "Explores past experiences to resolve deep-rooted emotional conflicts."
-          },
-          {
-            "title": "Interpersonal Therapy (IPT)",
-            "content": "Improves relationships and social functioning."
-          },
-          {
-            "title": "Mindfulness-Based Therapy",
-            "content": "Enhances present-moment awareness to reduce stress and anxiety."
-          }
-        ]
+    "anxiety_disorders": {
+      "name": "Anxiety Disorders",
+      "slidertitle": "Anxiety Disorders",
+      "motive": "Regain control and confidence.",
+      "hero": {
+        "title": "Managing Anxiety",
+        "text": "Excessive worry, fear, and panic attacks can disrupt daily life. Anxiety disorders include generalized anxiety disorder, social anxiety, phobias, and panic disorder.",
+        "image": "../src/assets/anxiety.jpg"
       },
-      "geriatric_psychiatric": {
-        "name": "geriatric psychiatric",
-        "slidertitle": "Geriatric Psychiatric Disorders",
-        "motive": "Ensuring dignity, emotional well-being, and a high quality of life.",
-        "hero": {
-          "title": "Caring for the Elderly",
-          "text": "Aging brings mental health challenges like dementia, late-life depression, and anxiety.",
-          "image": "../src/assets/dementia.png"
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Excessive worry, restlessness, rapid heartbeat, panic attacks, avoidance behavior."
         },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Memory loss, confusion, disorientation, personality changes, impaired judgment."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Gentle care, cognitive stimulation, medications, psychotherapy, social engagement, and family education."
-          }
-        ]
+        {
+          "title": "Support Strategy",
+          "content": "Cognitive-behavioral therapy (CBT), relaxation techniques, mindfulness, gradual exposure therapy, medications (if needed), and support groups."
+        }
+      ]
+    },
+    "sexual_disorders": {
+      "name": "Sexual Disorders",
+      "slidertitle": "Sexual Disorders",
+      "motive": "Ensuring a healthy and fulfilling sex life.",
+      "hero": {
+        "title": "Addressing Sexual Health",
+        "text": "Sexual dysfunctions (e.g., low desire, erectile dysfunction) and paraphilic disorders (unconventional sexual interests causing distress) can affect relationships and well-being.",
+        "image": "../src/assets/sexual_disorder.jpg"
       },
-      "marital_counseling": {
-        "name": "Marital Counseling",
-        "slidertitle": "Marital Counseling",
-        "motive": "Rebuilding trust and strengthening relationships.",
-        "hero": {
-          "title": "Strengthening Relationships",
-          "text": "Relationships face challenges that can lead to conflict, emotional distance, or dissatisfaction. Marital counseling provides a safe space to rebuild trust, enhance communication, and resolve conflicts.",
-          "image": "../src/assets/marital.webp"
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Low sexual desire, erectile dysfunction, unconventional sexual interests causing distress."
         },
-        "info_columns": [
-          {
-            "title": "Symptoms",
-            "content": "Relationships face challenges that can lead to conflict, emotional distance, or dissatisfaction. Marital counseling provides a safe space to rebuild trust, enhance communication, and resolve conflicts."
-          },
-          {
-            "title": "Support Strategy",
-            "content": "Couples therapy, communication skills training, conflict resolution techniques, and emotional bonding exercises."
-          }
-        ]
+        {
+          "title": "Support Strategy",
+          "content": "Compassionate therapy, sex counseling, medication (if required), addressing underlying psychological issues, and partner involvement."
+        }
+      ]
+    },
+    "psychotic_disorders": {
+      "name": "Psychotic Disorders",
+      "slidertitle": "Psychotic Disorders",
+      "motive": "Helping individuals maintain stability and lead fulfilling lives.",
+      "hero": {
+        "title": "Living with Psychotic Disorders",
+        "text": "Conditions like schizophrenia and schizoaffective disorder cause hallucinations, delusions, and disorganized thinking.",
+        "image": "../src/assets/psychotic.jpg"
       },
-      "mental_health": {
-        "name": "Mental Health",
-        "slidertitle": "Mental Health Training",
-        "motive": "Empowering individuals and professionals.",
-        "hero": {
-          "title": "Educating for Better Mental Health",
-          "text": "Educating individuals and professionals on mental health is essential for better awareness and support. Training programs are available for mental health first aid, stress & resilience, and professional development.",
-          "image": "../src/assets/training.png"
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Hallucinations, delusions, disorganized thinking, social withdrawal."
         },
-        "info_columns": [
+        {
+          "title": "Support Strategy",
+          "content": "Antipsychotic medications, psychotherapy, family support, social rehabilitation, and crisis intervention."
+        }
+      ]
+    },
+    "mood_disorders": {
+      "name": "Mood Disorders",
+      "slidertitle": "Mood Disorders",
+      "motive": "Achieving long-term stability.",
+      "hero": {
+        "title": "Managing Mood Disorders",
+        "text": "Depression drains energy, while bipolar disorder causes mood swings between extreme highs and lows.",
+        "image": "../src/assets/mood-disorder.webp"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Persistent sadness, loss of interest, mood swings, fatigue, feelings of worthlessness."
+        },
+        {
+          "title": "Support Strategy",
+          "content": "Personalized treatment including therapy (CBT, interpersonal therapy), mood stabilizers, antidepressants, lifestyle changes, and emotional support from loved ones."
+        }
+      ]
+    },
+    "addiction_disorders": {
+      "name": "Addiction Disorders",
+      "slidertitle": "Addiction Disorders",
+      "motive": "Regaining control and building a fulfilling life.",
+      "hero": {
+        "title": "Overcoming Addiction",
+        "text": "Substance addictions (alcohol, drugs) and behavioral addictions (gambling, gaming, internet) hijack the brain’s reward system.",
+        "image": "../src/assets/addiction.jpeg"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Craving, loss of control over substance use, withdrawal symptoms, neglect of responsibilities."
+        },
+        {
+          "title": "Support Strategy",
+          "content": "Detox programs, rehabilitation, cognitive therapy, support groups (AA, NA), family therapy, and relapse prevention strategies."
+        }
+      ],
+      "gallery": {
+        "title": "Our Rehab Centers",
+        "images": [
           {
-            "title": "Mental Health First Aid",
-            "content": "Equipping individuals with skills to support those in distress."
+            "src": "../src/assets/center/enterance.jpeg",
+            "alt": "enterance picture"
           },
           {
-            "title": "Stress & Resilience Training",
-            "content": "Teaching coping mechanisms for daily life challenges."
+            "src": "../src/assets/center/enterance2.jpeg",
+            "alt": "picutre of enterance 2"
           },
           {
-            "title": "Professional Development for Clinicians",
-            "content": "Advanced courses in psychotherapy, psychiatric assessment, and crisis intervention."
+            "src": "../src/assets/center/desk.jpeg",
+            "alt": "صورة دعم القلق 1"
+          },
+          {
+            "src": "../src/assets/center/bedroom1.jpeg",
+            "alt": "صورة دعم القلق 2"
+          },
+          {
+            "src": "../src/assets/center/bedroom2.jpeg",
+            "alt": "صورة دعم القلق 3"
+          },
+          {
+            "src": "../src/assets/center/bedroomdouble.jpeg",
+            "alt": "صورة دعم القلق 1"
+          },
+          {
+            "src": "../src/assets/center/circle.jpeg",
+            "alt": "صورة دعم القلق 1"
+          },
+          {
+            "src": "../src/assets/center/living.jpeg",
+            "alt": ""
+          },
+          {
+            "src": "../src/assets/center/view.jpeg",
+            "alt": ""
           }
         ]
       }
+    },
+    "psychotherapy_services": {
+      "name": "Psychotherapy Services",
+      "slidertitle": "Psychotherapy Services",
+      "motive": "Tailored therapy for lasting change.",
+      "hero": {
+        "title": "Understanding Psychotherapy",
+        "text": "Psychotherapy helps individuals understand their thoughts, emotions, and behaviors, leading to lasting change. Different approaches cater to unique needs.",
+        "image": "../src/assets/psychotherapy.jpeg"
+      },
+      "info_columns": [
+        {
+          "title": "Cognitive-Behavioral Therapy (CBT)",
+          "content": "Restructures negative thought patterns to improve emotional well-being."
+        },
+        {
+          "title": "Dialectical Behavior Therapy (DBT)",
+          "content": "Helps manage intense emotions, especially in personality disorders."
+        },
+        {
+          "title": "Psychodynamic Therapy",
+          "content": "Explores past experiences to resolve deep-rooted emotional conflicts."
+        },
+        {
+          "title": "Interpersonal Therapy (IPT)",
+          "content": "Improves relationships and social functioning."
+        },
+        {
+          "title": "Mindfulness-Based Therapy",
+          "content": "Enhances present-moment awareness to reduce stress and anxiety."
+        }
+      ]
+    },
+    "geriatric_psychiatric": {
+      "name": "geriatric psychiatric",
+      "slidertitle": "Geriatric Psychiatric Disorders",
+      "motive": "Ensuring dignity, emotional well-being, and a high quality of life.",
+      "hero": {
+        "title": "Caring for the Elderly",
+        "text": "Aging brings mental health challenges like dementia, late-life depression, and anxiety.",
+        "image": "../src/assets/dementia.png"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Memory loss, confusion, disorientation, personality changes, impaired judgment."
+        },
+        {
+          "title": "Support Strategy",
+          "content": "Gentle care, cognitive stimulation, medications, psychotherapy, social engagement, and family education."
+        }
+      ]
+    },
+    "marital_counseling": {
+      "name": "Marital Counseling",
+      "slidertitle": "Marital Counseling",
+      "motive": "Rebuilding trust and strengthening relationships.",
+      "hero": {
+        "title": "Strengthening Relationships",
+        "text": "Relationships face challenges that can lead to conflict, emotional distance, or dissatisfaction. Marital counseling provides a safe space to rebuild trust, enhance communication, and resolve conflicts.",
+        "image": "../src/assets/marital.webp"
+      },
+      "info_columns": [
+        {
+          "title": "Symptoms",
+          "content": "Relationships face challenges that can lead to conflict, emotional distance, or dissatisfaction. Marital counseling provides a safe space to rebuild trust, enhance communication, and resolve conflicts."
+        },
+        {
+          "title": "Support Strategy",
+          "content": "Couples therapy, communication skills training, conflict resolution techniques, and emotional bonding exercises."
+        }
+      ]
+    },
+    "mental_health": {
+      "name": "Mental Health",
+      "slidertitle": "Mental Health Training",
+      "motive": "Empowering individuals and professionals.",
+      "hero": {
+        "title": "Educating for Better Mental Health",
+        "text": "Educating individuals and professionals on mental health is essential for better awareness and support. Training programs are available for mental health first aid, stress & resilience, and professional development.",
+        "image": "../src/assets/training.png"
+      },
+      "info_columns": [
+        {
+          "title": "Mental Health First Aid",
+          "content": "Equipping individuals with skills to support those in distress."
+        },
+        {
+          "title": "Stress & Resilience Training",
+          "content": "Teaching coping mechanisms for daily life challenges."
+        },
+        {
+          "title": "Professional Development for Clinicians",
+          "content": "Advanced courses in psychotherapy, psychiatric assessment, and crisis intervention."
+        }
+      ]
     }
+  }
 }
