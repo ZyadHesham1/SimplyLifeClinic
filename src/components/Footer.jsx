@@ -18,7 +18,7 @@ const Footer = () => {
   if (hideFooter) return null; // Do not render footer if in WebView
 
   return (
-    <footer className="bg-white">
+    <footer className="bg-white bottom-0">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           {/* Logo Section */}
@@ -62,7 +62,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/simply.life.mental.health" className="hover:underline">
+                  <a href="https://www.instagram.com/simply.pb.br/" className="hover:underline">
                   {t("Instagram")}
                   </a>
                 </li>

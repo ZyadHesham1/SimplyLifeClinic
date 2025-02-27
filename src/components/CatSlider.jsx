@@ -14,12 +14,12 @@ const CatSlider = ({ titleKey, link }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 3000, // Transition speed in milliseconds
+    speed: 1500, // Transition speed in milliseconds
     slidesToShow: 4, // Number of visible slides
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 2000, // Delay between slides
+    autoplaySpeed: 3000, // Delay between slides
     cssEase: 'cubic-bezier(.21,.91,.08,.95)', // Smooth linear transition
     // cssEase: 'cubic-bezier(0,1.14,0,.85)', // Smooth linear transition
     rtl: isRTL, // Enable RTL mode if needed

@@ -70,7 +70,7 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Mobile Menu Button */}
-        <div className="lg:hidden">
+        <div className="lg:hidden z-50 relative">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 rounded-md text-[var(--color-text)] hover:text-[var(--color-dark)] focus:outline-none bg-[var(--color-accent)]"
@@ -83,6 +83,38 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+      <Transition
+        show={isMobileMenuOpen}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        {(ref) => (
+          <div
+            ref={ref}
+            className={"absolute top-0 ${isRTL ? 'left-0' : 'right-0'} w-full bg-[var(--color-dark)] lg:hidden shadow-lg z-10 pt-16 pb-4"
+            }
+          >
+            <div className="px-4 pt-2 space-y-2">
+            <LanguageSwitch />
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={" block px-4 py-3 rounded-md transition-all duration-200 text-[var(--color-background)] hover:text-[var(--color-background)] hover:bg-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-50"
+                  }
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </Transition>
     </nav>
 
   );

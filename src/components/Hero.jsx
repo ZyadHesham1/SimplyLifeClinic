@@ -19,6 +19,11 @@ const Hero = () => {
             </p>
 
             {/* List of 3 Items */}
+
+            <p className="text-lg md:text-xl text-gray-600 rtl:text-right">
+              {t('hero.paragragh')}
+            </p>
+
             <ul className="space-y-4 text-left">
               <li className="flex items-center gap-3">
                 <span className="flex-shrink-0 w-6 h-6 bg-primary text-black rounded-full flex items-center justify-center">
@@ -36,11 +41,11 @@ const Hero = () => {
                 <span className="flex-shrink-0 w-6 h-6 bg-primary text-black rounded-full flex items-center justify-center">
                   ✓
                 </span>
-                <span className="text-gray-700">{t('hero.list_item_3')}</span>
+                <span className="text-gray-700 rtl:text-right">{t('hero.list_item_3')}</span>
               </li>
             </ul>
             <p className="text-lg md:text-xl text-gray-600 rtl:text-right">
-              {t('hero.paragragh')}
+              {t('hero.paragragh2')}
             </p>
 
             {/* Call-to-Action Buttons */}

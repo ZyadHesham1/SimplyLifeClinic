@@ -45,7 +45,7 @@ const App = () => {
 
 return (<>
 <RouterProvider router={router} />
-<WhatsAppWidget phoneNumber="+20155840696" />
+<WhatsAppWidget phoneNumber="+201555840696" />
 
 
 </>
